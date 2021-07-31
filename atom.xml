@@ -3,11 +3,11 @@
   <title>SaltFish</title>
   
   
-  <link href="http://example.com/atom.xml" rel="self"/>
+  <link href="https://hellosaltfish.github.io/atom.xml" rel="self"/>
   
-  <link href="http://example.com/"/>
+  <link href="https://hellosaltfish.github.io/"/>
   <updated>2021-07-31T04:17:54.036Z</updated>
-  <id>http://example.com/</id>
+  <id>https://hellosaltfish.github.io/</id>
   
   <author>
     <name>Xy</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>saltfish</title>
-    <link href="http://example.com/2021/07/31/saltfish/"/>
-    <id>http://example.com/2021/07/31/saltfish/</id>
+    <link href="https://hellosaltfish.github.io/2021/07/31/saltfish/"/>
+    <id>https://hellosaltfish.github.io/2021/07/31/saltfish/</id>
     <published>2021-07-31T04:16:34.000Z</published>
     <updated>2021-07-31T04:17:54.036Z</updated>
     
@@ -42,8 +42,8 @@
   
   <entry>
     <title>Hello World</title>
-    <link href="http://example.com/2021/07/31/hello-world/"/>
-    <id>http://example.com/2021/07/31/hello-world/</id>
+    <link href="https://hellosaltfish.github.io/2021/07/31/hello-world/"/>
+    <id>https://hellosaltfish.github.io/2021/07/31/hello-world/</id>
     <published>2021-07-31T04:14:17.605Z</published>
     <updated>2021-07-31T04:14:17.606Z</updated>
     
