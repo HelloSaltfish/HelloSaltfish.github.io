@@ -4,26 +4,25 @@
   
     
     <entry>
-      <title>saltfish</title>
-      <link href="/2021/073155908.html"/>
-      <url>/2021/073155908.html</url>
+      <title>后端开发技术面面经（持续更新中...）</title>
+      <link href="/2021/073110342.html"/>
+      <url>/2021/073110342.html</url>
       
-        <content type="html"><![CDATA[<ul><li><h1 id="大家好"><a href="#大家好" class="headerlink" title="大家好"></a>大家好</h1><ul><li><p>这里是谢煜</p></li><li><pre class=" language-python"><code class="language-python"><span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">'this is '</span><span class="token punctuation">)</span></code></pre></li></ul></li></ul>]]></content>
-      
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>Hello World</title>
-      <link href="/2021/073116107.html"/>
-      <url>/2021/073116107.html</url>
-      
-        <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre class=" language-bash"><code class="language-bash">$ hexo new <span class="token string">"My New Post"</span></code></pre><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre class=" language-bash"><code class="language-bash">$ hexo server</code></pre><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre class=" language-bash"><code class="language-bash">$ hexo generate</code></pre><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre class=" language-bash"><code class="language-bash">$ hexo deploy</code></pre><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
+        <content type="html"><![CDATA[<ul><li><h1 id="岗位-python-web开发"><a href="#岗位-python-web开发" class="headerlink" title="岗位:python web开发"></a>岗位:python web开发</h1><ul><li><h4 id="状态-已offer"><a href="#状态-已offer" class="headerlink" title="状态:已offer"></a>状态:已offer</h4></li><li><h4 id="流程-一轮技术面"><a href="#流程-一轮技术面" class="headerlink" title="流程:一轮技术面"></a>流程:一轮技术面</h4></li><li><h4 id="面试题目"><a href="#面试题目" class="headerlink" title="面试题目"></a>面试题目</h4><ul><li><blockquote><pre class=" language-go"><code class="language-go">学python多久了？学习过程中遇到的最大困难是什么？python3有多继承吗？python2和python3有什么区别，列举几点？简单描述下静态方法和类方法django了解多少？sql用的熟练吗？inner join是什么？自连接和外连接哪个效率高？了解过爬虫吗？写一个正则，匹配<span class="token number">11</span>位手机号用过非关系数据库吗？redis或者mongodb之类的？能实习多久？</code></pre></blockquote></li></ul></li></ul></li></ul><hr><ul><li><h1 id="岗位-python开发"><a href="#岗位-python开发" class="headerlink" title="岗位:python开发"></a>岗位:python开发</h1><ul><li><h4 id="状态-已offer-1"><a href="#状态-已offer-1" class="headerlink" title="状态:已offer"></a>状态:已offer</h4></li><li><h4 id="流程-一轮技术面-1"><a href="#流程-一轮技术面-1" class="headerlink" title="流程:一轮技术面"></a>流程:一轮技术面</h4></li><li><h4 id="面试题目-1"><a href="#面试题目-1" class="headerlink" title="面试题目"></a>面试题目</h4><ul><li><blockquote><pre class=" language-go"><code class="language-go">python的字典底层是怎么实现的？两道编程题：<span class="token number">1</span><span class="token punctuation">.</span> 假设数组nums只有 一个重复的整数 ，找出这个重复的数 。<span class="token number">2</span><span class="token punctuation">.</span> 给定一个数组 nums，编写一个函数将所有 <span class="token number">0</span> 移动到数组的末尾，同时保持非零元素的相对顺序随便设计一个包含外键的数据库，口述表的结构sql题：有两张表，查询学生id为<span class="token number">3</span>的平均成绩会django的orm吗，用orm写一下这道sql题后端是如何发送数据给前端的，具体是怎么实现的，讲底层原理你的项目有部署吗，有了解过docker吗</code></pre></blockquote></li></ul></li></ul></li></ul><hr><ul><li><h1 id="岗位-python开发兼助教"><a href="#岗位-python开发兼助教" class="headerlink" title="岗位:python开发兼助教"></a>岗位:python开发兼助教</h1><ul><li><h4 id="状态-已offer-2"><a href="#状态-已offer-2" class="headerlink" title="状态:已offer"></a>状态:已offer</h4></li><li><h4 id="流程-笔试-一轮技术面-hr面"><a href="#流程-笔试-一轮技术面-hr面" class="headerlink" title="流程:笔试+一轮技术面+hr面"></a>流程:笔试+一轮技术面+hr面</h4></li><li><h4 id="面试题目-2"><a href="#面试题目-2" class="headerlink" title="面试题目"></a>面试题目</h4><ul><li><blockquote><pre class=" language-go"><code class="language-go">五道编程题：<span class="token number">1</span><span class="token punctuation">.</span>异常处理<span class="token number">2</span><span class="token punctuation">.</span>判断闰年<span class="token number">3</span><span class="token punctuation">.</span>格式化输出<span class="token number">4</span><span class="token punctuation">.</span>大小写转换<span class="token number">5</span><span class="token punctuation">.</span>设计一个不带参装饰器，计算运行时间</code></pre></blockquote></li></ul></li></ul></li></ul>]]></content>
       
       
+      <categories>
+          
+          <category> 面试 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> python </tag>
+            
+        </tags>
       
     </entry>
     
