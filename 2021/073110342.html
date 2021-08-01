@@ -221,75 +221,12 @@
         </li>
         
         
-        <li><div class="divider"></div></li>
-        <li>
-            <a href="https://github.com/HelloSaltfish" class="waves-effect waves-light" target="_blank">
-                <i class="fab fa-github-square fa-fw"></i>Fork Me
-            </a>
-        </li>
-        
     </ul>
 </div>
 
 
         </div>
 
-        
-            <style>
-    .nav-transparent .github-corner {
-        display: none !important;
-    }
-
-    .github-corner {
-        position: absolute;
-        z-index: 10;
-        top: 0;
-        right: 0;
-        border: 0;
-        transform: scale(1.1);
-    }
-
-    .github-corner svg {
-        color: #0f9d58;
-        fill: #fff;
-        height: 64px;
-        width: 64px;
-    }
-
-    .github-corner:hover .octo-arm {
-        animation: a 0.56s ease-in-out;
-    }
-
-    .github-corner .octo-arm {
-        animation: none;
-    }
-
-    @keyframes a {
-        0%,
-        to {
-            transform: rotate(0);
-        }
-        20%,
-        60% {
-            transform: rotate(-25deg);
-        }
-        40%,
-        80% {
-            transform: rotate(10deg);
-        }
-    }
-</style>
-
-<a href="https://github.com/HelloSaltfish" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
-   data-tooltip="Fork Me" data-position="left" data-delay="50">
-    <svg viewBox="0 0 250 250" aria-hidden="true">
-        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
-        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
-              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
-        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
-              fill="currentColor" class="octo-body"></path>
-    </svg>
-</a>
         
     </nav>
 
@@ -461,6 +398,9 @@
         <hr class="clearfix">
 
         
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.css">
+        
 
         
 
@@ -472,43 +412,32 @@
 <li><h4 id="流程-一轮技术面"><a href="#流程-一轮技术面" class="headerlink" title="流程:一轮技术面"></a>流程:一轮技术面</h4></li>
 <li><h4 id="面试题目"><a href="#面试题目" class="headerlink" title="面试题目"></a>面试题目</h4><ul>
 <li><blockquote>
-<pre class=" language-go"><code class="language-go">学python多久了？
-学习过程中遇到的最大困难是什么？
-python3有多继承吗？
-python2和python3有什么区别，列举几点？
-简单描述下静态方法和类方法
-django了解多少？
-sql用的熟练吗？inner join是什么？
-自连接和外连接哪个效率高？
-了解过爬虫吗？写一个正则，匹配<span class="token number">11</span>位手机号
-用过非关系数据库吗？redis或者mongodb之类的？
-能实习多久？
-</code></pre>
-</blockquote>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<hr>
-<ul>
-<li><h1 id="岗位-python开发"><a href="#岗位-python开发" class="headerlink" title="岗位:python开发"></a>岗位:python开发</h1><ul>
-<li><h4 id="状态-已offer-1"><a href="#状态-已offer-1" class="headerlink" title="状态:已offer"></a>状态:已offer</h4></li>
-<li><h4 id="流程-一轮技术面-1"><a href="#流程-一轮技术面-1" class="headerlink" title="流程:一轮技术面"></a>流程:一轮技术面</h4></li>
-<li><h4 id="面试题目-1"><a href="#面试题目-1" class="headerlink" title="面试题目"></a>面试题目</h4><ul>
-<li><blockquote>
-<pre class=" language-go"><code class="language-go">python的字典底层是怎么实现的？
+<p>```go<br>学python多久了？<br>学习过程中遇到的最大困难是什么？<br>python3有多继承吗？<br>python2和python3有什么区别，列举几点？<br>简单描述下静态方法和类方法<br>django了解多少？<br>sql用的熟练吗？inner join是什么？<br>自连接和外连接哪个效率高？<br>了解过爬虫吗？写一个正则，匹配11位手机号<br>用过非关系数据库吗？redis或者mongodb之类的？<br>能实习多久？</p>
+<pre class="line-numbers language-none"><code class="language-none">
+---
+
+
+
+
+
++ # 岗位:python开发
+
+ + #### 状态:已offer
+
+ + #### 流程:一轮技术面
+
+ + #### 面试题目
+
+   + &gt; &#96;&#96;&#96;go
+python的字典底层是怎么实现的？
 两道编程题：
-<span class="token number">1</span><span class="token punctuation">.</span> 假设数组nums只有 一个重复的整数 ，找出这个重复的数 。
-<span class="token number">2</span><span class="token punctuation">.</span> 给定一个数组 nums，编写一个函数将所有 <span class="token number">0</span> 移动到数组的末尾，同时保持非零元素的相对顺序
+1. 假设数组nums只有 一个重复的整数 ，找出这个重复的数 。
+2. 给定一个数组 nums，编写一个函数将所有 0 移动到数组的末尾，同时保持非零元素的相对顺序
 随便设计一个包含外键的数据库，口述表的结构
-sql题：有两张表，查询学生id为<span class="token number">3</span>的平均成绩
+sql题：有两张表，查询学生id为3的平均成绩
 会django的orm吗，用orm写一下这道sql题
 后端是如何发送数据给前端的，具体是怎么实现的，讲底层原理
-你的项目有部署吗，有了解过docker吗
-</code></pre>
-</blockquote>
+你的项目有部署吗，有了解过docker吗<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></blockquote>
 </li>
 </ul>
 </li>
@@ -518,9 +447,9 @@ sql题：有两张表，查询学生id为<span class="token number">3</span>的�
 <hr>
 <ul>
 <li><h1 id="岗位-python开发兼助教"><a href="#岗位-python开发兼助教" class="headerlink" title="岗位:python开发兼助教"></a>岗位:python开发兼助教</h1><ul>
-<li><h4 id="状态-已offer-2"><a href="#状态-已offer-2" class="headerlink" title="状态:已offer"></a>状态:已offer</h4></li>
+<li><h4 id="状态-已offer-1"><a href="#状态-已offer-1" class="headerlink" title="状态:已offer"></a>状态:已offer</h4></li>
 <li><h4 id="流程-笔试-一轮技术面-hr面"><a href="#流程-笔试-一轮技术面-hr面" class="headerlink" title="流程:笔试+一轮技术面+hr面"></a>流程:笔试+一轮技术面+hr面</h4></li>
-<li><h4 id="面试题目-2"><a href="#面试题目-2" class="headerlink" title="面试题目"></a>面试题目</h4><ul>
+<li><h4 id="面试题目-1"><a href="#面试题目-1" class="headerlink" title="面试题目"></a>面试题目</h4><ul>
 <li><blockquote>
 <pre class=" language-go"><code class="language-go">五道编程题：
 <span class="token number">1</span><span class="token punctuation">.</span>异常处理
@@ -1008,10 +937,11 @@ sql题：有两张表，查询学生id为<span class="token number">3</span>的�
             
                 <span id="year">2019-2021</span>
             
-            <span id="year">2019</span>
-            <a href="/about" target="_blank">Xy</a>
+             <!--  <span id="year">2019</span>
+            <a href="/about" target="_blank">SaltFish</a>
             |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
-            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a> -->
+
             <br>
             
             
