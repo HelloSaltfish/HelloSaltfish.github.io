@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="后端开发技术面面经（持续更新中...）, SaltFish">
+    <meta name="keywords" content="手敲部分排序算法, SaltFish">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>后端开发技术面面经（持续更新中...） | SaltFish</title>
+    <title>手敲部分排序算法 | SaltFish</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -236,12 +236,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/6.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/16.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">后端开发技术面面经（持续更新中...）</h1>
+                    <h1 class="description center-align post-title">手敲部分排序算法</h1>
                 </div>
             </div>
         </div>
@@ -369,8 +369,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E9%9D%A2%E8%AF%95/" class="post-category">
-                                面试
+                            <a href="/categories/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/" class="post-category">
+                                排序算法
                             </a>
                         
                     </div>
@@ -382,7 +382,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-07-31
+                    2020-09-07
                 </div>
                 
 
@@ -403,66 +403,136 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <ul>
-<li><h1 id="岗位-python-web开发"><a href="#岗位-python-web开发" class="headerlink" title="岗位:python web开发"></a>岗位:python web开发</h1><ul>
-<li><h4 id="状态-已offer"><a href="#状态-已offer" class="headerlink" title="状态:已offer"></a>状态:已offer</h4></li>
-<li><h4 id="流程-一轮技术面"><a href="#流程-一轮技术面" class="headerlink" title="流程:一轮技术面"></a>流程:一轮技术面</h4></li>
-<li><h4 id="面试题目"><a href="#面试题目" class="headerlink" title="面试题目"></a>面试题目</h4><ul>
-<li><pre class=" language-python"><code class="language-python">学python多久了？
-学习过程中遇到的最大困难是什么？
-python3有多继承吗？
-python2和python3有什么区别，列举几点？
-简单描述下静态方法和类方法
-django了解多少？
-sql用的熟练吗？inner join是什么？
-自连接和外连接哪个效率高？
-了解过爬虫吗？写一个正则，匹配<span class="token number">11</span>位手机号
-用过非关系数据库吗？redis或者mongodb之类的？
-能实习多久？
-</code></pre>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<hr>
+                <hr>
 <ul>
-<li><h1 id="岗位-python开发"><a href="#岗位-python开发" class="headerlink" title="岗位:python开发"></a>岗位:python开发</h1><ul>
-<li><h4 id="状态-已offer-1"><a href="#状态-已offer-1" class="headerlink" title="状态:已offer"></a>状态:已offer</h4></li>
-<li><h4 id="流程-一轮技术面-1"><a href="#流程-一轮技术面-1" class="headerlink" title="流程:一轮技术面"></a>流程:一轮技术面</h4></li>
-<li><h4 id="面试题目-1"><a href="#面试题目-1" class="headerlink" title="面试题目"></a>面试题目</h4><ul>
-<li><pre class=" language-python"><code class="language-python">python的字典底层是怎么实现的？
-两道编程题：
-<span class="token number">1</span><span class="token punctuation">.</span> 假设数组nums只有 一个重复的整数 ，找出这个重复的数 。
-<span class="token number">2</span><span class="token punctuation">.</span> 给定一个数组 nums，编写一个函数将所有 <span class="token number">0</span> 移动到数组的末尾，同时保持非零元素的相对顺序
-随便设计一个包含外键的数据库，口述表的结构
-sql题：有两张表，查询学生id为<span class="token number">3</span>的平均成绩
-会django的orm吗，用orm写一下这道sql题
-后端是如何发送数据给前端的，具体是怎么实现的，讲底层原理
-你的项目有部署吗，有了解过docker吗
+<li><h1 id="冒泡排序"><a href="#冒泡排序" class="headerlink" title="冒泡排序"></a>冒泡排序</h1><ul>
+<li><pre class=" language-python"><code class="language-python"><span class="token keyword">import</span> random
+
+l1 <span class="token operator">=</span> <span class="token punctuation">[</span>random<span class="token punctuation">.</span>randint<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">100</span><span class="token punctuation">)</span> <span class="token keyword">for</span> x <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>l1<span class="token punctuation">)</span>
+<span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span>len<span class="token punctuation">(</span>l1<span class="token punctuation">)</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">for</span> j <span class="token keyword">in</span> range<span class="token punctuation">(</span>len<span class="token punctuation">(</span>l1<span class="token punctuation">)</span><span class="token operator">-</span><span class="token number">1</span><span class="token operator">-</span>i<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">if</span> l1<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token operator">></span>l1<span class="token punctuation">[</span>j<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
+            l1<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">,</span>l1<span class="token punctuation">[</span>j<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> l1<span class="token punctuation">[</span>j<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span>l1<span class="token punctuation">[</span>j<span class="token punctuation">]</span>
+
+<span class="token keyword">print</span><span class="token punctuation">(</span>l1<span class="token punctuation">)</span>
 </code></pre>
 </li>
 </ul>
 </li>
 </ul>
-</li>
-</ul>
-<hr>
 <ul>
-<li><h1 id="岗位-python开发兼助教"><a href="#岗位-python开发兼助教" class="headerlink" title="岗位:python开发兼助教"></a>岗位:python开发兼助教</h1><ul>
-<li><h4 id="状态-已offer-2"><a href="#状态-已offer-2" class="headerlink" title="状态:已offer"></a>状态:已offer</h4></li>
-<li><h4 id="流程-笔试-一轮技术面-hr面"><a href="#流程-笔试-一轮技术面-hr面" class="headerlink" title="流程:笔试+一轮技术面+hr面"></a>流程:笔试+一轮技术面+hr面</h4></li>
-<li><h4 id="面试题目-2"><a href="#面试题目-2" class="headerlink" title="面试题目"></a>面试题目</h4><ul>
-<li><pre class=" language-python"><code class="language-python">五道编程题：
-<span class="token number">1</span><span class="token punctuation">.</span>异常处理
-<span class="token number">2</span><span class="token punctuation">.</span>判断闰年
-<span class="token number">3</span><span class="token punctuation">.</span>格式化输出
-<span class="token number">4</span><span class="token punctuation">.</span>大小写转换
-<span class="token number">5</span><span class="token punctuation">.</span>设计一个不带参装饰器，计算运行时间
+<li><h1 id="选择排序"><a href="#选择排序" class="headerlink" title="选择排序"></a>选择排序</h1><ul>
+<li><pre class=" language-python"><code class="language-python"><span class="token keyword">import</span> random
+
+l1 <span class="token operator">=</span> <span class="token punctuation">[</span>random<span class="token punctuation">.</span>randint<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">100</span><span class="token punctuation">)</span> <span class="token keyword">for</span> x <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>l1<span class="token punctuation">)</span>
+<span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span>len<span class="token punctuation">(</span>l1<span class="token punctuation">)</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    min_index <span class="token operator">=</span> i
+    <span class="token keyword">for</span> j <span class="token keyword">in</span> range<span class="token punctuation">(</span>i <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">,</span> len<span class="token punctuation">(</span>l1<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">if</span> l1<span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">&lt;</span> l1<span class="token punctuation">[</span>min_index<span class="token punctuation">]</span><span class="token punctuation">:</span>
+            min_index <span class="token operator">=</span> j
+    <span class="token keyword">if</span> min_index <span class="token operator">!=</span> i<span class="token punctuation">:</span>
+      l1<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">,</span> l1<span class="token punctuation">[</span>min_index<span class="token punctuation">]</span> <span class="token operator">=</span> l1<span class="token punctuation">[</span>min_index<span class="token punctuation">]</span><span class="token punctuation">,</span> l1<span class="token punctuation">[</span>i<span class="token punctuation">]</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>l1<span class="token punctuation">)</span>
 </code></pre>
 </li>
 </ul>
+</li>
+</ul>
+<ul>
+<li><h1 id="插入排序"><a href="#插入排序" class="headerlink" title="插入排序"></a>插入排序</h1><ul>
+<li><pre class=" language-python"><code class="language-python"><span class="token keyword">import</span> random
+
+l1 <span class="token operator">=</span> <span class="token punctuation">[</span>random<span class="token punctuation">.</span>randint<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">100</span><span class="token punctuation">)</span> <span class="token keyword">for</span> x <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>l1<span class="token punctuation">)</span>
+li_len <span class="token operator">=</span> len<span class="token punctuation">(</span>l1<span class="token punctuation">)</span>
+<span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> li_len<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    temp <span class="token operator">=</span> l1<span class="token punctuation">[</span>i<span class="token punctuation">]</span>
+    <span class="token keyword">if</span> l1<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">&lt;</span> l1<span class="token punctuation">[</span>i <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
+        j <span class="token operator">=</span> i <span class="token operator">-</span> <span class="token number">1</span>
+        <span class="token keyword">while</span> j <span class="token operator">>=</span> <span class="token number">0</span> <span class="token operator">and</span> l1<span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">></span> temp<span class="token punctuation">:</span>
+            l1<span class="token punctuation">[</span>j <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> l1<span class="token punctuation">[</span>j<span class="token punctuation">]</span>
+            j <span class="token operator">-=</span> <span class="token number">1</span>
+        l1<span class="token punctuation">[</span>j <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> temp
+
+<span class="token keyword">print</span><span class="token punctuation">(</span>l1<span class="token punctuation">)</span>
+</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><h1 id="归并排序"><a href="#归并排序" class="headerlink" title="归并排序"></a>归并排序</h1><ul>
+<li><pre class=" language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">merge</span><span class="token punctuation">(</span>l1<span class="token punctuation">,</span> low<span class="token punctuation">,</span> mid<span class="token punctuation">,</span> high<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    i <span class="token operator">=</span> low
+    j <span class="token operator">=</span> mid <span class="token operator">+</span> <span class="token number">1</span>
+    temp <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+    <span class="token keyword">while</span> i <span class="token operator">&lt;=</span> mid <span class="token operator">and</span> j <span class="token operator">&lt;=</span> high<span class="token punctuation">:</span>
+        <span class="token keyword">if</span> l1<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">&lt;</span> l1<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">:</span>
+            temp<span class="token punctuation">.</span>append<span class="token punctuation">(</span>l1<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span>
+            i <span class="token operator">+=</span> <span class="token number">1</span>
+        <span class="token keyword">else</span><span class="token punctuation">:</span>
+            temp<span class="token punctuation">.</span>append<span class="token punctuation">(</span>l1<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">)</span>
+            j <span class="token operator">+=</span> <span class="token number">1</span>
+
+    <span class="token keyword">while</span> i <span class="token operator">&lt;=</span> mid<span class="token punctuation">:</span>
+        temp<span class="token punctuation">.</span>append<span class="token punctuation">(</span>l1<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span>
+        i <span class="token operator">+=</span> <span class="token number">1</span>
+    <span class="token keyword">while</span> j <span class="token operator">&lt;=</span> high<span class="token punctuation">:</span>
+        temp<span class="token punctuation">.</span>append<span class="token punctuation">(</span>l1<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">)</span>
+        j <span class="token operator">+=</span> <span class="token number">1</span>
+
+    l1<span class="token punctuation">[</span>low<span class="token punctuation">:</span>high <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> temp
+
+
+<span class="token keyword">def</span> <span class="token function">merge_sort</span><span class="token punctuation">(</span>l1<span class="token punctuation">,</span> low<span class="token punctuation">,</span> high<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">if</span> low <span class="token operator">&lt;</span> high<span class="token punctuation">:</span>
+        mid <span class="token operator">=</span> <span class="token punctuation">(</span>low <span class="token operator">+</span> high<span class="token punctuation">)</span> <span class="token operator">//</span> <span class="token number">2</span>
+        merge_sort<span class="token punctuation">(</span>l1<span class="token punctuation">,</span> low<span class="token punctuation">,</span> mid<span class="token punctuation">)</span>
+        merge_sort<span class="token punctuation">(</span>l1<span class="token punctuation">,</span> mid <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">,</span> high<span class="token punctuation">)</span>
+        merge<span class="token punctuation">(</span>l1<span class="token punctuation">,</span> low<span class="token punctuation">,</span> mid<span class="token punctuation">,</span> high<span class="token punctuation">)</span>
+
+<span class="token keyword">import</span> random
+l1 <span class="token operator">=</span> <span class="token punctuation">[</span>random<span class="token punctuation">.</span>randint<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">100</span><span class="token punctuation">)</span> <span class="token keyword">for</span> _ <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>l1<span class="token punctuation">)</span>
+merge_sort<span class="token punctuation">(</span>l1<span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span>len<span class="token punctuation">(</span>l1<span class="token punctuation">)</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>l1<span class="token punctuation">)</span>
+</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><h1 id="快速排序"><a href="#快速排序" class="headerlink" title="快速排序"></a>快速排序</h1><ul>
+<li><pre class=" language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">partition</span><span class="token punctuation">(</span>l1<span class="token punctuation">,</span> left<span class="token punctuation">,</span> right<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    temp <span class="token operator">=</span> l1<span class="token punctuation">[</span>left<span class="token punctuation">]</span>
+    <span class="token keyword">while</span> left <span class="token operator">&lt;</span> right<span class="token punctuation">:</span>
+        <span class="token keyword">while</span> left <span class="token operator">&lt;</span> right <span class="token operator">and</span> l1<span class="token punctuation">[</span>right<span class="token punctuation">]</span> <span class="token operator">>=</span> temp<span class="token punctuation">:</span>
+            right <span class="token operator">-=</span> <span class="token number">1</span>
+        l1<span class="token punctuation">[</span>left<span class="token punctuation">]</span> <span class="token operator">=</span> l1<span class="token punctuation">[</span>right<span class="token punctuation">]</span>
+        <span class="token keyword">while</span> left <span class="token operator">&lt;</span> right <span class="token operator">and</span> l1<span class="token punctuation">[</span>left<span class="token punctuation">]</span> <span class="token operator">&lt;=</span> temp<span class="token punctuation">:</span>
+            left <span class="token operator">+=</span> <span class="token number">1</span>
+        l1<span class="token punctuation">[</span>right<span class="token punctuation">]</span> <span class="token operator">=</span> l1<span class="token punctuation">[</span>left<span class="token punctuation">]</span>
+    l1<span class="token punctuation">[</span>left<span class="token punctuation">]</span> <span class="token operator">=</span> temp
+    <span class="token keyword">return</span> left
+
+
+<span class="token keyword">def</span> <span class="token function">quick_sort</span><span class="token punctuation">(</span>l1<span class="token punctuation">,</span> left<span class="token punctuation">,</span> right<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">if</span> left <span class="token operator">&lt;</span> right<span class="token punctuation">:</span>
+        mid <span class="token operator">=</span> partition<span class="token punctuation">(</span>l1<span class="token punctuation">,</span> left<span class="token punctuation">,</span> right<span class="token punctuation">)</span>
+        quick_sort<span class="token punctuation">(</span>l1<span class="token punctuation">,</span> left<span class="token punctuation">,</span> mid<span class="token number">-1</span><span class="token punctuation">)</span>
+        quick_sort<span class="token punctuation">(</span>l1<span class="token punctuation">,</span> mid <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">,</span> right<span class="token punctuation">)</span>
+
+
+<span class="token keyword">import</span> random
+
+l1 <span class="token operator">=</span> <span class="token punctuation">[</span>random<span class="token punctuation">.</span>randint<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">100</span><span class="token punctuation">)</span> <span class="token keyword">for</span> x <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>l1<span class="token punctuation">)</span>
+
+quick_sort<span class="token punctuation">(</span>l1<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> len<span class="token punctuation">(</span>l1<span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>l1<span class="token punctuation">)</span>
+</code></pre>
 </li>
 </ul>
 </li>
@@ -483,7 +553,7 @@ sql题：有两张表，查询学生id为<span class="token number">3</span>的�
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="/about" rel="external nofollow noreferrer">SaltFish</a>
+                    <a href="/about" rel="external nofollow noreferrer">Saltfish</a>
                 </span>
             </div>
             <div class="reprint__type">
@@ -493,7 +563,7 @@ sql题：有两张表，查询学生id为<span class="token number">3</span>的�
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://hellosaltfish.github.io/2021/073110342.html">https://hellosaltfish.github.io/2021/073110342.html</a>
+                    <a href="https://hellosaltfish.github.io/2020/090764845.html">https://hellosaltfish.github.io/2020/090764845.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -506,7 +576,7 @@ sql题：有两张表，查询学生id为<span class="token number">3</span>的�
                     本博客所有文章除特別声明外，均采用
                     <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
                     许可协议。转载请注明来源
-                    <a href="/about" target="_blank">SaltFish</a>
+                    <a href="/about" target="_blank">Saltfish</a>
                     !
                 </span>
             </div>
@@ -708,7 +778,7 @@ sql题：有两张表，查询学生id为<span class="token number">3</span>的�
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2021/080138966.html">
+                <a href="/2020/110138966.html">
                     <div class="card-image">
                         
                         
@@ -725,7 +795,7 @@ sql题：有两张表，查询学生id为<span class="token number">3</span>的�
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-08-01
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-11-01
                         </span>
                         <span class="publish-author">
                             
@@ -742,10 +812,10 @@ sql题：有两张表，查询学生id为<span class="token number">3</span>的�
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+                本篇&nbsp;<i class="far fa-dot-circle"></i>
             </div>
             <div class="card">
-                <a href="/2019/090764845.html">
+                <a href="/2020/090764845.html">
                     <div class="card-image">
                         
                         
@@ -762,7 +832,7 @@ sql题：有两张表，查询学生id为<span class="token number">3</span>的�
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2019-09-07
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-09-07
                             </span>
                         <span class="publish-author">
                             
@@ -776,6 +846,7 @@ sql题：有两张表，查询学生id为<span class="token number">3</span>的�
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -793,6 +864,43 @@ sql题：有两张表，查询学生id为<span class="token number">3</span>的�
 
 </div>
 
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('50')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE' || selection.getRangeAt(0).commonAncestorContainer.nodeName === 'CODE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: SaltFish<br />'
+            + '文章作者: SaltFish<br />'
+            + '文章链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
 
 
 <!-- 代码块功能依赖 -->
@@ -918,16 +1026,16 @@ sql题：有两张表，查询学生id为<span class="token number">3</span>的�
     
 
     <div class="container row center-align"
-         style="margin-bottom: 0px !important;">
+         style="margin-bottom: 15px !important;">
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
             
                 <span id="year">2019-2021</span>
             
-             <!--  <span id="year">2019</span>
-            <a href="/about" target="_blank">SaltFish</a>
-            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
-            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a> -->
+<!--             <span id="year">2019</span>-->
+<!--            <a href="/about" target="_blank">SaltFish</a>-->
+            |&nbsp;Belong to&nbsp;<a href="https://github.com/HelloSaltfish" target="_blank">SaltFish</a>
+<!--            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>-->
 
             <br>
             
@@ -950,6 +1058,60 @@ sql题：有两张表，查询学生id为<span class="token number">3</span>的�
             <br>
 
             <!-- 运行天数提醒. -->
+            
+                <span id="sitetime"> Loading ...</span>
+                <script>
+                    var calcSiteTime = function () {
+                        var seconds = 1000;
+                        var minutes = seconds * 60;
+                        var hours = minutes * 60;
+                        var days = hours * 24;
+                        var years = days * 365;
+                        var today = new Date();
+                        var startYear = "2019";
+                        var startMonth = "11";
+                        var startDate = "23";
+                        var startHour = "7";
+                        var startMinute = "3";
+                        var startSecond = "55";
+                        var todayYear = today.getFullYear();
+                        var todayMonth = today.getMonth() + 1;
+                        var todayDate = today.getDate();
+                        var todayHour = today.getHours();
+                        var todayMinute = today.getMinutes();
+                        var todaySecond = today.getSeconds();
+                        var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond);
+                        var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+                        var diff = t2 - t1;
+                        var diffYears = Math.floor(diff / years);
+                        var diffDays = Math.floor((diff / days) - diffYears * 365);
+
+                        // 区分是否有年份.
+                        var language = 'zh-CN';
+                        if (startYear === String(todayYear)) {
+                            document.getElementById("year").innerHTML = todayYear;
+                            var daysTip = 'This site has been running for ' + diffDays + ' days';
+                            if (language === 'zh-CN') {
+                                daysTip = '本站已运行 ' + diffDays + ' 天';
+                            } else if (language === 'zh-HK') {
+                                daysTip = '本站已運行 ' + diffDays + ' 天';
+                            }
+                            document.getElementById("sitetime").innerHTML = daysTip;
+                        } else {
+                            document.getElementById("year").innerHTML = startYear + " - " + todayYear;
+                            var yearsAndDaysTip = 'This site has been running for ' + diffYears + ' years and '
+                                + diffDays + ' days';
+                            if (language === 'zh-CN') {
+                                yearsAndDaysTip = '本站已运行 ' + diffYears + ' 年 ' + diffDays + ' 天';
+                            } else if (language === 'zh-HK') {
+                                yearsAndDaysTip = '本站已運行 ' + diffYears + ' 年 ' + diffDays + ' 天';
+                            }
+                            document.getElementById("sitetime").innerHTML = yearsAndDaysTip;
+                        }
+                    }
+
+                    calcSiteTime();
+                </script>
             
             <br>
             
@@ -1116,6 +1278,11 @@ $(function () {
 
     <!--腾讯兔小巢-->
     
+    
+    <script type="text/javascript" color="0,0,255"
+        pointColor="0,0,255" opacity='0.7'
+        zIndex="-1" count="99"
+        src="/libs/background/canvas-nest.js"></script>
     
 
     
