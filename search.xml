@@ -4,23 +4,48 @@
   
     
     <entry>
-      <title>后端开发技术面面经（持续更新中...）</title>
-      <link href="/2021/053110342.html"/>
-      <url>/2021/053110342.html</url>
+      <title>《MySQL是怎样运行的》阅读笔记</title>
+      <link href="/2021/06035534.html"/>
+      <url>/2021/06035534.html</url>
       
-        <content type="html"><![CDATA[<ul><li><h1 id="岗位-python-web开发"><a href="#岗位-python-web开发" class="headerlink" title="岗位:python web开发"></a>岗位:python web开发</h1><ul><li><h4 id="状态-已offer"><a href="#状态-已offer" class="headerlink" title="状态:已offer"></a>状态:已offer</h4></li><li><h4 id="流程-一轮技术面"><a href="#流程-一轮技术面" class="headerlink" title="流程:一轮技术面"></a>流程:一轮技术面</h4></li><li><h4 id="面试题目"><a href="#面试题目" class="headerlink" title="面试题目"></a>面试题目</h4><ul><li><pre class=" language-python"><code class="language-python">学python多久了？学习过程中遇到的最大困难是什么？python3有多继承吗？python2和python3有什么区别，列举几点？简单描述下静态方法和类方法django了解多少？sql用的熟练吗？inner join是什么？自连接和外连接哪个效率高？了解过爬虫吗？写一个正则，匹配<span class="token number">11</span>位手机号用过非关系数据库吗？redis或者mongodb之类的？能实习多久？</code></pre></li></ul></li></ul></li></ul><hr><ul><li><h1 id="岗位-python开发"><a href="#岗位-python开发" class="headerlink" title="岗位:python开发"></a>岗位:python开发</h1><ul><li><h4 id="状态-已offer-1"><a href="#状态-已offer-1" class="headerlink" title="状态:已offer"></a>状态:已offer</h4></li><li><h4 id="流程-一轮技术面-1"><a href="#流程-一轮技术面-1" class="headerlink" title="流程:一轮技术面"></a>流程:一轮技术面</h4></li><li><h4 id="面试题目-1"><a href="#面试题目-1" class="headerlink" title="面试题目"></a>面试题目</h4><ul><li><pre class=" language-python"><code class="language-python">python的字典底层是怎么实现的？两道编程题：<span class="token number">1</span><span class="token punctuation">.</span> 假设数组nums只有 一个重复的整数 ，找出这个重复的数 。<span class="token number">2</span><span class="token punctuation">.</span> 给定一个数组 nums，编写一个函数将所有 <span class="token number">0</span> 移动到数组的末尾，同时保持非零元素的相对顺序随便设计一个包含外键的数据库，口述表的结构sql题：有两张表，查询学生id为<span class="token number">3</span>的平均成绩会django的orm吗，用orm写一下这道sql题后端是如何发送数据给前端的，具体是怎么实现的，讲底层原理你的项目有部署吗，有了解过docker吗</code></pre></li></ul></li></ul></li></ul><hr><ul><li><h1 id="岗位-python开发兼助教"><a href="#岗位-python开发兼助教" class="headerlink" title="岗位:python开发兼助教"></a>岗位:python开发兼助教</h1><ul><li><h4 id="状态-已offer-2"><a href="#状态-已offer-2" class="headerlink" title="状态:已offer"></a>状态:已offer</h4></li><li><h4 id="流程-笔试-一轮技术面-hr面"><a href="#流程-笔试-一轮技术面-hr面" class="headerlink" title="流程:笔试+一轮技术面+hr面"></a>流程:笔试+一轮技术面+hr面</h4></li><li><h4 id="面试题目-2"><a href="#面试题目-2" class="headerlink" title="面试题目"></a>面试题目</h4><ul><li><pre class=" language-python"><code class="language-python">五道编程题：<span class="token number">1</span><span class="token punctuation">.</span>异常处理<span class="token number">2</span><span class="token punctuation">.</span>判断闰年<span class="token number">3</span><span class="token punctuation">.</span>格式化输出<span class="token number">4</span><span class="token punctuation">.</span>大小写转换<span class="token number">5</span><span class="token punctuation">.</span>设计一个不带参装饰器，计算运行时间</code></pre></li></ul></li></ul></li></ul>]]></content>
+        <content type="html"><![CDATA[<hr><hr><h1 id="第1章-装作自己是个小白——初识MySQL"><a href="#第1章-装作自己是个小白——初识MySQL" class="headerlink" title="第1章 装作自己是个小白——初识MySQL"></a>第1章 装作自己是个小白——初识MySQL</h1><h2 id="1-5-客户端与服务器连接的过程"><a href="#1-5-客户端与服务器连接的过程" class="headerlink" title="1.5 客户端与服务器连接的过程"></a>1.5 客户端与服务器连接的过程</h2><ul><li><h3 id="客户端进程和服务器进程在通信时采用下面几种方式"><a href="#客户端进程和服务器进程在通信时采用下面几种方式" class="headerlink" title="客户端进程和服务器进程在通信时采用下面几种方式"></a>客户端进程和服务器进程在通信时采用下面几种方式</h3><ul><li>TCP/IP：客户端进程和服务器进程在不同的主机中。</li><li>命名管道或共享内存：得是Windows，而且需要在启动服务器和客户端时添加参数。使用共享内存进行通信需要在同一主机上。</li><li>UNIX域套接字</li></ul></li></ul><h2 id="1-6-服务器处理客户端请求过程"><a href="#1-6-服务器处理客户端请求过程" class="headerlink" title="1.6 服务器处理客户端请求过程"></a>1.6 服务器处理客户端请求过程</h2><ul><li><h3 id="连接管理"><a href="#连接管理" class="headerlink" title="连接管理"></a>连接管理</h3><ul><li>当有一个客户端连接到服务端时，服务端进程会创建一个线程专门处理与这个客户端的交互。</li><li>当客户端退出时，服务器不会立即销毁这个线程，而是缓存起来，当另一个新客户端连接进来时，把该线程分配给它。</li><li>如果客户端和服务器不在同一台计算机上，可以采用传输层安全性协议，对连接进行加密，保证数据传输的安全性。</li></ul></li><li><h3 id="解析与优化"><a href="#解析与优化" class="headerlink" title="解析与优化"></a>解析与优化</h3><ul><li>查询缓存：会把刚刚处理过的查询请求与结果放在缓存上，下一次有同样的请求过来，就不用从底层的表中查询了。</li><li>语法解析：服务器对语句进行分析，判断请求的语法是否正确，然后将查询到的表、各种查询条件放在服务器内部使用的一些数据结构上。</li><li>查询优化：将外连接转换为内连接、表达式简化、子查询转换为连接等，优化的结果时生成执行计划，表明了应该使用哪些索引执行查询，以及表之间的连接顺序等等。</li></ul></li><li><h3 id="存储引擎"><a href="#存储引擎" class="headerlink" title="存储引擎"></a>存储引擎</h3><ul><li>功能：接收上层传下来的指令，然后对表中的数据进行读取或写入操作。</li><li>人们把请求过程分为server层和存储引擎层，只有存取真实数据的功能划分为存储引擎的功能。</li><li>server层在判断某条记录是否符合要求之后，其实是先发送到一个缓冲区，等缓冲区满了之后，才向客户端发送真正的记录。</li></ul></li></ul><h2 id="1-7-常用存储引擎"><a href="#1-7-常用存储引擎" class="headerlink" title="1.7 常用存储引擎"></a>1.7 常用存储引擎</h2><ul><li>InnoDB<ul><li>从MySQL5.5.5版本之后是默认存储引擎</li></ul></li><li>MyISAM<ul><li>之前是默认存储引擎</li></ul></li><li>MEMORY</li><li>BLACKHOLE</li><li>CSV</li><li>NDB</li><li>MERGE</li></ul>]]></content>
       
       
       <categories>
           
-          <category> 面试 </category>
+          <category> 数据库 </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> python </tag>
+            <tag> MySQL </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>后端开发技术面面经（持续更新中...）</title>
+      <link href="/2021/053110342.html"/>
+      <url>/2021/053110342.html</url>
+      
+        <content type="html"><![CDATA[<h1 id="岗位-python-web开发"><a href="#岗位-python-web开发" class="headerlink" title="岗位:python web开发"></a>岗位:python web开发</h1><ul><li><h4 id="状态-已offer"><a href="#状态-已offer" class="headerlink" title="状态:已offer"></a>状态:已offer</h4></li><li><h4 id="流程-一轮技术面"><a href="#流程-一轮技术面" class="headerlink" title="流程:一轮技术面"></a>流程:一轮技术面</h4></li><li><h4 id="面试题目"><a href="#面试题目" class="headerlink" title="面试题目"></a>面试题目</h4><ul><li><pre class=" language-python"><code class="language-python">学python多久了？学习过程中遇到的最大困难是什么？python3有多继承吗？python2和python3有什么区别，列举几点？简单描述下静态方法和类方法django了解多少？sql用的熟练吗？inner join是什么？自连接和外连接哪个效率高？了解过爬虫吗？写一个正则，匹配<span class="token number">11</span>位手机号用过非关系数据库吗？redis或者mongodb之类的？能实习多久？</code></pre></li></ul></li></ul><hr><h1 id="岗位-python开发"><a href="#岗位-python开发" class="headerlink" title="岗位:python开发"></a>岗位:python开发</h1><ul><li><h4 id="状态-已offer-1"><a href="#状态-已offer-1" class="headerlink" title="状态:已offer"></a>状态:已offer</h4></li><li><h4 id="流程-一轮技术面-1"><a href="#流程-一轮技术面-1" class="headerlink" title="流程:一轮技术面"></a>流程:一轮技术面</h4></li><li><h4 id="面试题目-1"><a href="#面试题目-1" class="headerlink" title="面试题目"></a>面试题目</h4><ul><li><pre class=" language-python"><code class="language-python">python的字典底层是怎么实现的？两道编程题：<span class="token number">1</span><span class="token punctuation">.</span> 假设数组nums只有 一个重复的整数 ，找出这个重复的数 。<span class="token number">2</span><span class="token punctuation">.</span> 给定一个数组 nums，编写一个函数将所有 <span class="token number">0</span> 移动到数组的末尾，同时保持非零元素的相对顺序随便设计一个包含外键的数据库，口述表的结构sql题：有两张表，查询学生id为<span class="token number">3</span>的平均成绩会django的orm吗，用orm写一下这道sql题后端是如何发送数据给前端的，具体是怎么实现的，讲底层原理你的项目有部署吗，有了解过docker吗</code></pre></li></ul></li></ul><hr><h1 id="岗位-python开发兼助教"><a href="#岗位-python开发兼助教" class="headerlink" title="岗位:python开发兼助教"></a>岗位:python开发兼助教</h1><ul><li><h4 id="状态-已offer-2"><a href="#状态-已offer-2" class="headerlink" title="状态:已offer"></a>状态:已offer</h4></li><li><h4 id="流程-笔试-一轮技术面-hr面"><a href="#流程-笔试-一轮技术面-hr面" class="headerlink" title="流程:笔试+一轮技术面+hr面"></a>流程:笔试+一轮技术面+hr面</h4></li><li><h4 id="面试题目-2"><a href="#面试题目-2" class="headerlink" title="面试题目"></a>面试题目</h4><ul><li><pre class=" language-python"><code class="language-python">五道编程题：<span class="token number">1</span><span class="token punctuation">.</span>异常处理<span class="token number">2</span><span class="token punctuation">.</span>判断闰年<span class="token number">3</span><span class="token punctuation">.</span>格式化输出<span class="token number">4</span><span class="token punctuation">.</span>大小写转换<span class="token number">5</span><span class="token punctuation">.</span>设计一个不带参装饰器，计算运行时间</code></pre></li></ul></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 开发面试 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 面经 </tag>
             
         </tags>
       
@@ -30,12 +55,26 @@
     
     <entry>
       <title>装饰器</title>
-      <link href="/2020/110138966.html"/>
-      <url>/2020/110138966.html</url>
+      <link href="/2021/040138966.html"/>
+      <url>/2021/040138966.html</url>
       
-        <content type="html"><![CDATA[]]></content>
+        <content type="html"><![CDATA[<hr><hr><h1 id="无参装饰器"><a href="#无参装饰器" class="headerlink" title="无参装饰器"></a>无参装饰器</h1><ul><li><pre class=" language-python"><code class="language-python"><span class="token keyword">import</span> time<span class="token keyword">def</span> <span class="token function">outter</span><span class="token punctuation">(</span>func<span class="token punctuation">)</span><span class="token punctuation">:</span>    <span class="token keyword">def</span> <span class="token function">wrapper</span><span class="token punctuation">(</span><span class="token operator">*</span>args<span class="token punctuation">,</span> <span class="token operator">**</span>kwargs<span class="token punctuation">)</span><span class="token punctuation">:</span>        start_time <span class="token operator">=</span> time<span class="token punctuation">.</span>time<span class="token punctuation">(</span><span class="token punctuation">)</span>        ret <span class="token operator">=</span> func<span class="token punctuation">(</span><span class="token operator">*</span>args<span class="token punctuation">,</span> <span class="token operator">**</span>kwargs<span class="token punctuation">)</span>        end_time <span class="token operator">=</span> time<span class="token punctuation">.</span>time<span class="token punctuation">(</span><span class="token punctuation">)</span>        <span class="token keyword">print</span><span class="token punctuation">(</span>end_time <span class="token operator">-</span> start_time<span class="token punctuation">)</span>        <span class="token keyword">return</span> ret    <span class="token keyword">return</span> wrapper@outter<span class="token keyword">def</span> <span class="token function">index</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span> b<span class="token punctuation">)</span><span class="token punctuation">:</span>    time<span class="token punctuation">.</span>sleep<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"it's over %s %s"</span> <span class="token operator">%</span> <span class="token punctuation">(</span>a<span class="token punctuation">,</span> b<span class="token punctuation">)</span><span class="token punctuation">)</span>    <span class="token keyword">return</span> <span class="token string">'ok'</span><span class="token comment" spellcheck="true"># index = outter(index)</span>index<span class="token punctuation">(</span><span class="token string">'a'</span><span class="token punctuation">,</span><span class="token string">'b'</span><span class="token punctuation">)</span>ret <span class="token operator">=</span>index<span class="token punctuation">(</span><span class="token string">'a'</span><span class="token punctuation">,</span><span class="token string">'b'</span><span class="token punctuation">)</span><span class="token keyword">print</span><span class="token punctuation">(</span>ret<span class="token punctuation">)</span></code></pre></li></ul><h1 id="有参装饰器"><a href="#有参装饰器" class="headerlink" title="有参装饰器"></a>有参装饰器</h1><ul><li><pre class=" language-python"><code class="language-python"><span class="token comment" spellcheck="true"># encoding: utf-8</span><span class="token triple-quoted-string string">'''  @author: saltfish  @contact: 17681861018  @file.txt: 01 带参数装饰器.py  @time: 2020/12/20 12:36 '''</span><span class="token keyword">def</span> <span class="token function">auth</span><span class="token punctuation">(</span>from_add<span class="token punctuation">)</span><span class="token punctuation">:</span>    <span class="token keyword">def</span> <span class="token function">wrapper</span><span class="token punctuation">(</span>func<span class="token punctuation">)</span><span class="token punctuation">:</span>        <span class="token keyword">def</span> <span class="token function">f</span><span class="token punctuation">(</span><span class="token operator">*</span>args<span class="token punctuation">,</span> <span class="token operator">**</span>kwargs<span class="token punctuation">)</span><span class="token punctuation">:</span>            name <span class="token operator">=</span> input<span class="token punctuation">(</span><span class="token string">'>>>'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>strip<span class="token punctuation">(</span><span class="token punctuation">)</span>            password <span class="token operator">=</span> int<span class="token punctuation">(</span>input<span class="token punctuation">(</span><span class="token string">'>>>'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>strip<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>            <span class="token keyword">if</span> from_add <span class="token operator">==</span> <span class="token string">'file.txt'</span> <span class="token operator">and</span> name <span class="token operator">==</span> <span class="token string">'xy'</span> <span class="token operator">and</span> password <span class="token operator">==</span> <span class="token number">1018</span><span class="token punctuation">:</span>                <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"登录成功,源于文件"</span><span class="token punctuation">)</span>                ret <span class="token operator">=</span> func<span class="token punctuation">(</span><span class="token operator">*</span>args<span class="token punctuation">,</span> <span class="token operator">**</span>kwargs<span class="token punctuation">)</span>                <span class="token keyword">return</span> ret            <span class="token keyword">else</span><span class="token punctuation">:</span>                <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"登陆失败"</span><span class="token punctuation">)</span>        <span class="token keyword">return</span> f    <span class="token keyword">return</span> wrapper@auth<span class="token punctuation">(</span><span class="token string">'file.txt'</span><span class="token punctuation">)</span><span class="token keyword">def</span> <span class="token function">test1</span><span class="token punctuation">(</span>name<span class="token punctuation">,</span> password<span class="token punctuation">)</span><span class="token punctuation">:</span>    <span class="token keyword">print</span><span class="token punctuation">(</span>f<span class="token string">'&amp;#123;name&amp;#125;通过用&amp;#123;password&amp;#125;登录成功'</span><span class="token punctuation">)</span>test1<span class="token punctuation">(</span><span class="token string">'xy'</span><span class="token punctuation">,</span> <span class="token number">1018</span><span class="token punctuation">)</span></code></pre></li></ul>]]></content>
       
       
+      <categories>
+          
+          <category> Python </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 语法 </tag>
+            
+            <tag> 高阶部分 </tag>
+            
+        </tags>
       
     </entry>
     
@@ -51,14 +90,16 @@
       
       <categories>
           
-          <category> 排序算法 </category>
+          <category> Python </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> python </tag>
+            <tag> 排序算法 </tag>
+            
+            <tag> 语法 </tag>
             
         </tags>
       

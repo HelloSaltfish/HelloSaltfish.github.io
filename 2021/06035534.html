@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="装饰器, SaltFish">
+    <meta name="keywords" content="《MySQL是怎样运行的》阅读笔记, SaltFish">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>装饰器 | SaltFish</title>
+    <title>《MySQL是怎样运行的》阅读笔记 | SaltFish</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -214,12 +214,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/5.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/11.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">装饰器</h1>
+                    <h1 class="description center-align post-title">《MySQL是怎样运行的》阅读笔记</h1>
                 </div>
             </div>
         </div>
@@ -333,12 +333,25 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/MySQL/">
+                                <span class="chip bg-color">MySQL</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" class="post-category">
+                                数据库
+                            </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -347,7 +360,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-11-01
+                    2021-06-03
                 </div>
                 
 
@@ -368,7 +381,52 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                
+                <hr>
+<hr>
+<h1 id="第1章-装作自己是个小白——初识MySQL"><a href="#第1章-装作自己是个小白——初识MySQL" class="headerlink" title="第1章 装作自己是个小白——初识MySQL"></a>第1章 装作自己是个小白——初识MySQL</h1><h2 id="1-5-客户端与服务器连接的过程"><a href="#1-5-客户端与服务器连接的过程" class="headerlink" title="1.5 客户端与服务器连接的过程"></a>1.5 客户端与服务器连接的过程</h2><ul>
+<li><h3 id="客户端进程和服务器进程在通信时采用下面几种方式"><a href="#客户端进程和服务器进程在通信时采用下面几种方式" class="headerlink" title="客户端进程和服务器进程在通信时采用下面几种方式"></a>客户端进程和服务器进程在通信时采用下面几种方式</h3><ul>
+<li>TCP/IP：客户端进程和服务器进程在不同的主机中。</li>
+<li>命名管道或共享内存：得是Windows，而且需要在启动服务器和客户端时添加参数。使用共享内存进行通信需要在同一主机上。</li>
+<li>UNIX域套接字</li>
+</ul>
+</li>
+</ul>
+<h2 id="1-6-服务器处理客户端请求过程"><a href="#1-6-服务器处理客户端请求过程" class="headerlink" title="1.6 服务器处理客户端请求过程"></a>1.6 服务器处理客户端请求过程</h2><ul>
+<li><h3 id="连接管理"><a href="#连接管理" class="headerlink" title="连接管理"></a>连接管理</h3><ul>
+<li>当有一个客户端连接到服务端时，服务端进程会创建一个线程专门处理与这个客户端的交互。</li>
+<li>当客户端退出时，服务器不会立即销毁这个线程，而是缓存起来，当另一个新客户端连接进来时，把该线程分配给它。</li>
+<li>如果客户端和服务器不在同一台计算机上，可以采用传输层安全性协议，对连接进行加密，保证数据传输的安全性。</li>
+</ul>
+</li>
+<li><h3 id="解析与优化"><a href="#解析与优化" class="headerlink" title="解析与优化"></a>解析与优化</h3><ul>
+<li>查询缓存：会把刚刚处理过的查询请求与结果放在缓存上，下一次有同样的请求过来，就不用从底层的表中查询了。</li>
+<li>语法解析：服务器对语句进行分析，判断请求的语法是否正确，然后将查询到的表、各种查询条件放在服务器内部使用的一些数据结构上。</li>
+<li>查询优化：将外连接转换为内连接、表达式简化、子查询转换为连接等，优化的结果时生成执行计划，表明了应该使用哪些索引执行查询，以及表之间的连接顺序等等。</li>
+</ul>
+</li>
+<li><h3 id="存储引擎"><a href="#存储引擎" class="headerlink" title="存储引擎"></a>存储引擎</h3><ul>
+<li>功能：接收上层传下来的指令，然后对表中的数据进行读取或写入操作。</li>
+<li>人们把请求过程分为server层和存储引擎层，只有存取真实数据的功能划分为存储引擎的功能。</li>
+<li>server层在判断某条记录是否符合要求之后，其实是先发送到一个缓冲区，等缓冲区满了之后，才向客户端发送真正的记录。</li>
+</ul>
+</li>
+</ul>
+<h2 id="1-7-常用存储引擎"><a href="#1-7-常用存储引擎" class="headerlink" title="1.7 常用存储引擎"></a>1.7 常用存储引擎</h2><ul>
+<li>InnoDB<ul>
+<li>从MySQL5.5.5版本之后是默认存储引擎</li>
+</ul>
+</li>
+<li>MyISAM<ul>
+<li>之前是默认存储引擎</li>
+</ul>
+</li>
+<li>MEMORY</li>
+<li>BLACKHOLE</li>
+<li>CSV</li>
+<li>NDB</li>
+<li>MERGE</li>
+</ul>
+
                 
             </div>
             <hr/>
@@ -384,7 +442,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="/about" rel="external nofollow noreferrer">SaltFish</a>
+                    <a href="/about" rel="external nofollow noreferrer">Saltfish</a>
                 </span>
             </div>
             <div class="reprint__type">
@@ -394,7 +452,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://hellosaltfish.github.io/2020/110138966.html">https://hellosaltfish.github.io/2020/110138966.html</a>
+                    <a href="https://hellosaltfish.github.io/2021/06035534.html">https://hellosaltfish.github.io/2021/06035534.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -407,7 +465,7 @@
                     本博客所有文章除特別声明外，均采用
                     <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
                     许可协议。转载请注明来源
-                    <a href="/about" target="_blank">SaltFish</a>
+                    <a href="/about" target="_blank">Saltfish</a>
                     !
                 </span>
             </div>
@@ -431,7 +489,11 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/MySQL/">
+                                    <span class="chip bg-color">MySQL</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -601,9 +663,60 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
+            <div class="card">
+                <a href="/2021/06035534.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="《MySQL是怎样运行的》阅读笔记">
+                        
+                        <span class="card-title">《MySQL是怎样运行的》阅读笔记</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-06-03
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" class="post-category">
+                                    数据库
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/MySQL/">
+                        <span class="chip bg-color">MySQL</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
             <div class="card">
                 <a href="/2021/053110342.html">
                     <div class="card-image">
@@ -621,64 +734,15 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-05-31
-                        </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/%E9%9D%A2%E8%AF%95/" class="post-category">
-                                    面试
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/python/">
-                        <span class="chip bg-color">python</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2020/090764845.html">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="手敲部分排序算法">
-                        
-                        <span class="card-title">手敲部分排序算法</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            
-                        
-                    </div>
-                    <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-09-07
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-05-31
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/" class="post-category">
-                                    排序算法
+                            <a href="/categories/%E5%BC%80%E5%8F%91%E9%9D%A2%E8%AF%95/" class="post-category">
+                                    开发面试
                                 </a>
                             
                             
@@ -688,8 +752,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/python/">
-                        <span class="chip bg-color">python</span>
+                    <a href="/tags/%E9%9D%A2%E7%BB%8F/">
+                        <span class="chip bg-color">面经</span>
                     </a>
                     
                 </div>

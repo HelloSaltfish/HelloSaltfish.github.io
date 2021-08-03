@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="后端开发技术面面经（持续更新中...）, SaltFish">
+    <meta name="keywords" content="装饰器, SaltFish">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>后端开发技术面面经（持续更新中...） | SaltFish</title>
+    <title>装饰器 | SaltFish</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -214,12 +214,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/6.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/5.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">后端开发技术面面经（持续更新中...）</h1>
+                    <h1 class="description center-align post-title">装饰器</h1>
                 </div>
             </div>
         </div>
@@ -335,8 +335,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E9%9D%A2%E7%BB%8F/">
-                                <span class="chip bg-color">面经</span>
+                            <a href="/tags/%E8%AF%AD%E6%B3%95/">
+                                <span class="chip bg-color">语法</span>
+                            </a>
+                        
+                            <a href="/tags/%E9%AB%98%E9%98%B6%E9%83%A8%E5%88%86/">
+                                <span class="chip bg-color">高阶部分</span>
                             </a>
                         
                     </div>
@@ -347,8 +351,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E5%BC%80%E5%8F%91%E9%9D%A2%E8%AF%95/" class="post-category">
-                                开发面试
+                            <a href="/categories/Python/" class="post-category">
+                                Python
                             </a>
                         
                     </div>
@@ -360,7 +364,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-05-31
+                    2021-04-01
                 </div>
                 
 
@@ -381,59 +385,72 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="岗位-python-web开发"><a href="#岗位-python-web开发" class="headerlink" title="岗位:python web开发"></a>岗位:python web开发</h1><ul>
-<li><h4 id="状态-已offer"><a href="#状态-已offer" class="headerlink" title="状态:已offer"></a>状态:已offer</h4></li>
-<li><h4 id="流程-一轮技术面"><a href="#流程-一轮技术面" class="headerlink" title="流程:一轮技术面"></a>流程:一轮技术面</h4></li>
-<li><h4 id="面试题目"><a href="#面试题目" class="headerlink" title="面试题目"></a>面试题目</h4><ul>
-<li><pre class=" language-python"><code class="language-python">学python多久了？
-学习过程中遇到的最大困难是什么？
-python3有多继承吗？
-python2和python3有什么区别，列举几点？
-简单描述下静态方法和类方法
-django了解多少？
-sql用的熟练吗？inner join是什么？
-自连接和外连接哪个效率高？
-了解过爬虫吗？写一个正则，匹配<span class="token number">11</span>位手机号
-用过非关系数据库吗？redis或者mongodb之类的？
-能实习多久？
-</code></pre>
-</li>
-</ul>
-</li>
-</ul>
+                <hr>
 <hr>
-<h1 id="岗位-python开发"><a href="#岗位-python开发" class="headerlink" title="岗位:python开发"></a>岗位:python开发</h1><ul>
-<li><h4 id="状态-已offer-1"><a href="#状态-已offer-1" class="headerlink" title="状态:已offer"></a>状态:已offer</h4></li>
-<li><h4 id="流程-一轮技术面-1"><a href="#流程-一轮技术面-1" class="headerlink" title="流程:一轮技术面"></a>流程:一轮技术面</h4></li>
-<li><h4 id="面试题目-1"><a href="#面试题目-1" class="headerlink" title="面试题目"></a>面试题目</h4><ul>
-<li><pre class=" language-python"><code class="language-python">python的字典底层是怎么实现的？
-两道编程题：
-<span class="token number">1</span><span class="token punctuation">.</span> 假设数组nums只有 一个重复的整数 ，找出这个重复的数 。
-<span class="token number">2</span><span class="token punctuation">.</span> 给定一个数组 nums，编写一个函数将所有 <span class="token number">0</span> 移动到数组的末尾，同时保持非零元素的相对顺序
-随便设计一个包含外键的数据库，口述表的结构
-sql题：有两张表，查询学生id为<span class="token number">3</span>的平均成绩
-会django的orm吗，用orm写一下这道sql题
-后端是如何发送数据给前端的，具体是怎么实现的，讲底层原理
-你的项目有部署吗，有了解过docker吗
+<h1 id="无参装饰器"><a href="#无参装饰器" class="headerlink" title="无参装饰器"></a>无参装饰器</h1><ul>
+<li><pre class=" language-python"><code class="language-python"><span class="token keyword">import</span> time
+
+
+<span class="token keyword">def</span> <span class="token function">outter</span><span class="token punctuation">(</span>func<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">wrapper</span><span class="token punctuation">(</span><span class="token operator">*</span>args<span class="token punctuation">,</span> <span class="token operator">**</span>kwargs<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        start_time <span class="token operator">=</span> time<span class="token punctuation">.</span>time<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        ret <span class="token operator">=</span> func<span class="token punctuation">(</span><span class="token operator">*</span>args<span class="token punctuation">,</span> <span class="token operator">**</span>kwargs<span class="token punctuation">)</span>
+        end_time <span class="token operator">=</span> time<span class="token punctuation">.</span>time<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span>end_time <span class="token operator">-</span> start_time<span class="token punctuation">)</span>
+        <span class="token keyword">return</span> ret
+
+    <span class="token keyword">return</span> wrapper
+
+
+@outter
+<span class="token keyword">def</span> <span class="token function">index</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span> b<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    time<span class="token punctuation">.</span>sleep<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"it's over %s %s"</span> <span class="token operator">%</span> <span class="token punctuation">(</span>a<span class="token punctuation">,</span> b<span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token keyword">return</span> <span class="token string">'ok'</span>
+
+
+<span class="token comment" spellcheck="true"># index = outter(index)</span>
+index<span class="token punctuation">(</span><span class="token string">'a'</span><span class="token punctuation">,</span><span class="token string">'b'</span><span class="token punctuation">)</span>
+ret <span class="token operator">=</span>index<span class="token punctuation">(</span><span class="token string">'a'</span><span class="token punctuation">,</span><span class="token string">'b'</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>ret<span class="token punctuation">)</span>
 </code></pre>
 </li>
 </ul>
-</li>
-</ul>
-<hr>
-<h1 id="岗位-python开发兼助教"><a href="#岗位-python开发兼助教" class="headerlink" title="岗位:python开发兼助教"></a>岗位:python开发兼助教</h1><ul>
-<li><h4 id="状态-已offer-2"><a href="#状态-已offer-2" class="headerlink" title="状态:已offer"></a>状态:已offer</h4></li>
-<li><h4 id="流程-笔试-一轮技术面-hr面"><a href="#流程-笔试-一轮技术面-hr面" class="headerlink" title="流程:笔试+一轮技术面+hr面"></a>流程:笔试+一轮技术面+hr面</h4></li>
-<li><h4 id="面试题目-2"><a href="#面试题目-2" class="headerlink" title="面试题目"></a>面试题目</h4><ul>
-<li><pre class=" language-python"><code class="language-python">五道编程题：
-<span class="token number">1</span><span class="token punctuation">.</span>异常处理
-<span class="token number">2</span><span class="token punctuation">.</span>判断闰年
-<span class="token number">3</span><span class="token punctuation">.</span>格式化输出
-<span class="token number">4</span><span class="token punctuation">.</span>大小写转换
-<span class="token number">5</span><span class="token punctuation">.</span>设计一个不带参装饰器，计算运行时间
+<h1 id="有参装饰器"><a href="#有参装饰器" class="headerlink" title="有参装饰器"></a>有参装饰器</h1><ul>
+<li><pre class=" language-python"><code class="language-python"><span class="token comment" spellcheck="true"># encoding: utf-8</span>
+<span class="token triple-quoted-string string">'''
+  @author: saltfish
+  @contact: 17681861018
+  @file.txt: 01 带参数装饰器.py
+  @time: 2020/12/20 12:36
+ '''</span>
+
+
+<span class="token keyword">def</span> <span class="token function">auth</span><span class="token punctuation">(</span>from_add<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">wrapper</span><span class="token punctuation">(</span>func<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">def</span> <span class="token function">f</span><span class="token punctuation">(</span><span class="token operator">*</span>args<span class="token punctuation">,</span> <span class="token operator">**</span>kwargs<span class="token punctuation">)</span><span class="token punctuation">:</span>
+            name <span class="token operator">=</span> input<span class="token punctuation">(</span><span class="token string">'>>>'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>strip<span class="token punctuation">(</span><span class="token punctuation">)</span>
+            password <span class="token operator">=</span> int<span class="token punctuation">(</span>input<span class="token punctuation">(</span><span class="token string">'>>>'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>strip<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+            <span class="token keyword">if</span> from_add <span class="token operator">==</span> <span class="token string">'file.txt'</span> <span class="token operator">and</span> name <span class="token operator">==</span> <span class="token string">'xy'</span> <span class="token operator">and</span> password <span class="token operator">==</span> <span class="token number">1018</span><span class="token punctuation">:</span>
+                <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"登录成功,源于文件"</span><span class="token punctuation">)</span>
+                ret <span class="token operator">=</span> func<span class="token punctuation">(</span><span class="token operator">*</span>args<span class="token punctuation">,</span> <span class="token operator">**</span>kwargs<span class="token punctuation">)</span>
+                <span class="token keyword">return</span> ret
+
+            <span class="token keyword">else</span><span class="token punctuation">:</span>
+                <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"登陆失败"</span><span class="token punctuation">)</span>
+
+        <span class="token keyword">return</span> f
+
+    <span class="token keyword">return</span> wrapper
+
+
+@auth<span class="token punctuation">(</span><span class="token string">'file.txt'</span><span class="token punctuation">)</span>
+<span class="token keyword">def</span> <span class="token function">test1</span><span class="token punctuation">(</span>name<span class="token punctuation">,</span> password<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>f<span class="token string">'&amp;#123;name&amp;#125;通过用&amp;#123;password&amp;#125;登录成功'</span><span class="token punctuation">)</span>
+
+
+test1<span class="token punctuation">(</span><span class="token string">'xy'</span><span class="token punctuation">,</span> <span class="token number">1018</span><span class="token punctuation">)</span>
 </code></pre>
-</li>
-</ul>
 </li>
 </ul>
 
@@ -462,7 +479,7 @@ sql题：有两张表，查询学生id为<span class="token number">3</span>的�
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://hellosaltfish.github.io/2021/053110342.html">https://hellosaltfish.github.io/2021/053110342.html</a>
+                    <a href="https://hellosaltfish.github.io/2021/040138966.html">https://hellosaltfish.github.io/2021/040138966.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -500,8 +517,12 @@ sql题：有两张表，查询学生id为<span class="token number">3</span>的�
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E9%9D%A2%E7%BB%8F/">
-                                    <span class="chip bg-color">面经</span>
+                                <a href="/tags/%E8%AF%AD%E6%B3%95/">
+                                    <span class="chip bg-color">语法</span>
+                                </a>
+                            
+                                <a href="/tags/%E9%AB%98%E9%98%B6%E9%83%A8%E5%88%86/">
+                                    <span class="chip bg-color">高阶部分</span>
                                 </a>
                             
                         </div>
@@ -677,13 +698,13 @@ sql题：有两张表，查询学生id为<span class="token number">3</span>的�
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2021/06035534.html">
+                <a href="/2021/053110342.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="《MySQL是怎样运行的》阅读笔记">
+                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="后端开发技术面面经（持续更新中...）">
                         
-                        <span class="card-title">《MySQL是怎样运行的》阅读笔记</span>
+                        <span class="card-title">后端开发技术面面经（持续更新中...）</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -694,14 +715,14 @@ sql题：有两张表，查询学生id为<span class="token number">3</span>的�
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-06-03
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-05-31
                         </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" class="post-category">
-                                    数据库
+                            <a href="/categories/%E5%BC%80%E5%8F%91%E9%9D%A2%E8%AF%95/" class="post-category">
+                                    开发面试
                                 </a>
                             
                             
@@ -711,8 +732,8 @@ sql题：有两张表，查询学生id为<span class="token number">3</span>的�
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/MySQL/">
-                        <span class="chip bg-color">MySQL</span>
+                    <a href="/tags/%E9%9D%A2%E7%BB%8F/">
+                        <span class="chip bg-color">面经</span>
                     </a>
                     
                 </div>
@@ -726,13 +747,13 @@ sql题：有两张表，查询学生id为<span class="token number">3</span>的�
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/040138966.html">
+                <a href="/2020/090764845.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="装饰器">
+                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="手敲部分排序算法">
                         
-                        <span class="card-title">装饰器</span>
+                        <span class="card-title">手敲部分排序算法</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -743,7 +764,7 @@ sql题：有两张表，查询学生id为<span class="token number">3</span>的�
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-04-01
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-09-07
                             </span>
                         <span class="publish-author">
                             
@@ -760,12 +781,12 @@ sql题：有两张表，查询学生id为<span class="token number">3</span>的�
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E8%AF%AD%E6%B3%95/">
-                        <span class="chip bg-color">语法</span>
+                    <a href="/tags/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/">
+                        <span class="chip bg-color">排序算法</span>
                     </a>
                     
-                    <a href="/tags/%E9%AB%98%E9%98%B6%E9%83%A8%E5%88%86/">
-                        <span class="chip bg-color">高阶部分</span>
+                    <a href="/tags/%E8%AF%AD%E6%B3%95/">
+                        <span class="chip bg-color">语法</span>
                     </a>
                     
                 </div>
