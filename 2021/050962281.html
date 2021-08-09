@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Personal, SaltFish">
+    <meta name="keywords" content="基于socket套接字通信, SaltFish">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Personal | SaltFish</title>
+    <title>基于socket套接字通信 | SaltFish</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -214,7 +214,7 @@
 <script src="/libs/cryptojs/crypto-js.min.js"></script>
 <script>
     (function() {
-        let pwd = '27bfcd1dee4f22c8fe8a2374af9b660419d1361b1c207e9b41a754a113f38fcc';
+        let pwd = '';
         if (pwd && pwd.length > 0) {
             if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
                 alert('密码错误，将返回主页！');
@@ -227,12 +227,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/6.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Personal</h1>
+                    <h1 class="description center-align post-title">基于socket套接字通信</h1>
                 </div>
             </div>
         </div>
@@ -348,8 +348,16 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Personal/">
-                                <span class="chip bg-color">Personal</span>
+                            <a href="/tags/%E9%AB%98%E9%98%B6%E9%83%A8%E5%88%86/">
+                                <span class="chip bg-color">高阶部分</span>
+                            </a>
+                        
+                            <a href="/tags/%E7%BD%91%E7%BB%9C/">
+                                <span class="chip bg-color">网络</span>
+                            </a>
+                        
+                            <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">
+                                <span class="chip bg-color">操作系统</span>
                             </a>
                         
                     </div>
@@ -360,8 +368,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/Personal/" class="post-category">
-                                Personal
+                            <a href="/categories/Python/" class="post-category">
+                                Python
                             </a>
                         
                     </div>
@@ -373,7 +381,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-08-08
+                    2021-05-09
                 </div>
                 
 
@@ -394,7 +402,139 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                
+                <h1 id="1-基于TCP通信"><a href="#1-基于TCP通信" class="headerlink" title="1.基于TCP通信"></a>1.基于TCP通信</h1><h2 id="server端"><a href="#server端" class="headerlink" title="server端"></a>server端</h2><pre class=" language-python"><code class="language-python"><span class="token keyword">import</span> socket
+
+<span class="token comment" spellcheck="true"># 买手机</span>
+phone <span class="token operator">=</span> socket<span class="token punctuation">.</span>socket<span class="token punctuation">(</span>socket<span class="token punctuation">.</span>AF_INET<span class="token punctuation">,</span> socket<span class="token punctuation">.</span>SOCK_STREAM<span class="token punctuation">)</span>  <span class="token comment" spellcheck="true"># 流式协议 ==》tcp</span>
+
+<span class="token comment" spellcheck="true"># 绑定手机卡   后面绑定的是端口号</span>
+phone<span class="token punctuation">.</span>bind<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token string">'127.0.0.1'</span><span class="token punctuation">,</span> <span class="token number">8080</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true"># 开机   5是半连接池的大小</span>
+phone<span class="token punctuation">.</span>listen<span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span>
+
+<span class="token keyword">while</span> <span class="token boolean">True</span><span class="token punctuation">:</span>
+    <span class="token comment" spellcheck="true"># 待机  conn是三次握手的双向通路，client_address是客户端的ip+port</span>
+    conn<span class="token punctuation">,</span> client_address <span class="token operator">=</span> phone<span class="token punctuation">.</span>accept<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+    <span class="token comment" spellcheck="true"># 收/发消息 1024Bytes代表能接收的最大数据量,收到的是字节类型，bytes</span>
+    <span class="token keyword">while</span> <span class="token number">1</span><span class="token punctuation">:</span>
+        <span class="token keyword">try</span><span class="token punctuation">:</span>
+            data <span class="token operator">=</span> conn<span class="token punctuation">.</span>recv<span class="token punctuation">(</span><span class="token number">1024</span><span class="token punctuation">)</span>
+            <span class="token keyword">if</span> len<span class="token punctuation">(</span>data<span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">:</span>
+                <span class="token keyword">break</span>
+            <span class="token keyword">print</span><span class="token punctuation">(</span>data<span class="token punctuation">.</span>decode<span class="token punctuation">(</span><span class="token string">'utf-8'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+            conn<span class="token punctuation">.</span>send<span class="token punctuation">(</span>data<span class="token punctuation">.</span>upper<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token keyword">except</span> Exception<span class="token punctuation">:</span>
+            <span class="token comment" spellcheck="true"># 针对windows</span>
+            <span class="token keyword">break</span>
+
+    <span class="token comment" spellcheck="true"># 关闭电话连接conn  必须的回收资源操作</span>
+    conn<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true"># 关机 可选</span>
+<span class="token comment" spellcheck="true"># phone.close()</span>
+</code></pre>
+<h2 id="client端"><a href="#client端" class="headerlink" title="client端"></a>client端</h2><pre class=" language-python"><code class="language-python"><span class="token keyword">import</span> socket
+
+<span class="token comment" spellcheck="true"># 买手机</span>
+phone <span class="token operator">=</span> socket<span class="token punctuation">.</span>socket<span class="token punctuation">(</span>socket<span class="token punctuation">.</span>AF_INET<span class="token punctuation">,</span> socket<span class="token punctuation">.</span>SOCK_STREAM<span class="token punctuation">)</span>
+
+
+<span class="token comment" spellcheck="true"># 拨通号码</span>
+phone<span class="token punctuation">.</span>connect<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token string">'127.0.0.1'</span><span class="token punctuation">,</span><span class="token number">8080</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token keyword">while</span> <span class="token number">1</span><span class="token punctuation">:</span>
+    msg <span class="token operator">=</span> input<span class="token punctuation">(</span><span class="token string">"请输入要发送的内容："</span><span class="token punctuation">)</span><span class="token punctuation">.</span>strip<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword">if</span> msg <span class="token operator">==</span><span class="token string">'88'</span> <span class="token punctuation">:</span>
+        <span class="token keyword">break</span>
+    <span class="token keyword">elif</span> <span class="token operator">not</span> msg<span class="token punctuation">:</span>
+        <span class="token keyword">continue</span>
+    phone<span class="token punctuation">.</span>send<span class="token punctuation">(</span>msg<span class="token punctuation">.</span>encode<span class="token punctuation">(</span><span class="token string">'utf-8'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    data<span class="token operator">=</span>phone<span class="token punctuation">.</span>recv<span class="token punctuation">(</span><span class="token number">1024</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>data<span class="token punctuation">.</span>decode<span class="token punctuation">(</span><span class="token string">'utf-8'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+
+<span class="token comment" spellcheck="true"># 必须的回收资源操作</span>
+phone<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre>
+<h1 id="2-基于UDP通信"><a href="#2-基于UDP通信" class="headerlink" title="2.基于UDP通信"></a>2.基于UDP通信</h1><h2 id="server端-1"><a href="#server端-1" class="headerlink" title="server端"></a>server端</h2><pre class=" language-python"><code class="language-python"><span class="token keyword">import</span> socket
+
+<span class="token comment" spellcheck="true"># 买手机</span>
+phone <span class="token operator">=</span> socket<span class="token punctuation">.</span>socket<span class="token punctuation">(</span>socket<span class="token punctuation">.</span>AF_INET<span class="token punctuation">,</span> socket<span class="token punctuation">.</span>SOCK_DGRAM<span class="token punctuation">)</span>  <span class="token comment" spellcheck="true"># 数据报协议 ==》udp</span>
+
+<span class="token comment" spellcheck="true"># 绑定手机卡   后面绑定的是端口号</span>
+phone<span class="token punctuation">.</span>bind<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token string">'127.0.0.1'</span><span class="token punctuation">,</span> <span class="token number">8081</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true"># 收/发消息 1024Bytes代表能接收的最大数据量,收到的是字节类型，bytes</span>
+<span class="token keyword">while</span> <span class="token number">1</span><span class="token punctuation">:</span>
+    data<span class="token punctuation">,</span>client_add<span class="token operator">=</span> phone<span class="token punctuation">.</span>recvfrom<span class="token punctuation">(</span><span class="token number">1024</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>data<span class="token punctuation">.</span>decode<span class="token punctuation">(</span><span class="token string">"utf-8"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    phone<span class="token punctuation">.</span>sendto<span class="token punctuation">(</span>data<span class="token punctuation">.</span>upper<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>client_add<span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true"># 关闭电话连接conn  必须的回收资源操作</span>
+phone<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre>
+<h2 id="client端-1"><a href="#client端-1" class="headerlink" title="client端"></a>client端</h2><pre class=" language-python"><code class="language-python"><span class="token keyword">import</span> socket
+
+<span class="token comment" spellcheck="true"># 买手机</span>
+phone <span class="token operator">=</span> socket<span class="token punctuation">.</span>socket<span class="token punctuation">(</span>socket<span class="token punctuation">.</span>AF_INET<span class="token punctuation">,</span> socket<span class="token punctuation">.</span>SOCK_DGRAM<span class="token punctuation">)</span>
+
+<span class="token keyword">while</span> <span class="token number">1</span><span class="token punctuation">:</span>
+    msg <span class="token operator">=</span> input<span class="token punctuation">(</span><span class="token string">'>>>'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>strip<span class="token punctuation">(</span><span class="token punctuation">)</span>
+    phone<span class="token punctuation">.</span>sendto<span class="token punctuation">(</span>msg<span class="token punctuation">.</span>encode<span class="token punctuation">(</span><span class="token string">"utf-8"</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token punctuation">(</span><span class="token string">'127.0.0.1'</span><span class="token punctuation">,</span><span class="token number">8081</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    data<span class="token punctuation">,</span>server_add <span class="token operator">=</span> phone<span class="token punctuation">.</span>recvfrom<span class="token punctuation">(</span><span class="token number">1024</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>data<span class="token punctuation">.</span>decode<span class="token punctuation">(</span><span class="token string">"utf-8"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true"># 必须的回收资源操作</span>
+phone<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre>
+<h1 id="3-TCP实现并发"><a href="#3-TCP实现并发" class="headerlink" title="3.TCP实现并发"></a>3.TCP实现并发</h1><h2 id="server端-2"><a href="#server端-2" class="headerlink" title="server端"></a>server端</h2><pre class=" language-python"><code class="language-python"><span class="token comment" spellcheck="true"># 要有固定IP和PORT</span>
+<span class="token comment" spellcheck="true"># 24小时提供服务</span>
+<span class="token comment" spellcheck="true"># 能实现并发</span>
+
+<span class="token keyword">import</span> socket
+<span class="token keyword">from</span> threading <span class="token keyword">import</span> Thread
+
+
+<span class="token keyword">def</span> <span class="token function">communciate</span><span class="token punctuation">(</span>conn<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token comment" spellcheck="true"># 通信循环</span>
+    <span class="token keyword">while</span> <span class="token boolean">True</span><span class="token punctuation">:</span>
+        <span class="token keyword">try</span><span class="token punctuation">:</span>
+            data <span class="token operator">=</span> conn<span class="token punctuation">.</span>recv<span class="token punctuation">(</span><span class="token number">1024</span><span class="token punctuation">)</span>
+            <span class="token keyword">if</span> len<span class="token punctuation">(</span>data<span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">:</span> <span class="token keyword">break</span>
+            conn<span class="token punctuation">.</span>send<span class="token punctuation">(</span>data<span class="token punctuation">.</span>upper<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        <span class="token keyword">except</span> ConnectionResetError <span class="token keyword">as</span> e<span class="token punctuation">:</span>
+            <span class="token keyword">print</span><span class="token punctuation">(</span>e<span class="token punctuation">)</span>
+            <span class="token keyword">break</span>
+    conn<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+
+<span class="token keyword">def</span> <span class="token function">server</span><span class="token punctuation">(</span>ip<span class="token punctuation">,</span> port<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    server <span class="token operator">=</span> socket<span class="token punctuation">.</span>socket<span class="token punctuation">(</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true"># 括号内不加参数默认就是TCP协议</span>
+    server<span class="token punctuation">.</span>bind<span class="token punctuation">(</span><span class="token punctuation">(</span>ip<span class="token punctuation">,</span> port<span class="token punctuation">)</span><span class="token punctuation">)</span>
+    server<span class="token punctuation">.</span>listen<span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span>
+    <span class="token keyword">while</span> <span class="token boolean">True</span><span class="token punctuation">:</span>
+        conn<span class="token punctuation">,</span> addr <span class="token operator">=</span> server<span class="token punctuation">.</span>accept<span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token comment" spellcheck="true"># 开设多线程或者多进程处理客户端通信</span>
+        t <span class="token operator">=</span> Thread<span class="token punctuation">(</span>target<span class="token operator">=</span>communciate<span class="token punctuation">,</span> args<span class="token operator">=</span><span class="token punctuation">(</span>conn<span class="token punctuation">,</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+        t<span class="token punctuation">.</span>start<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+
+<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">'__main__'</span><span class="token punctuation">:</span>
+    s <span class="token operator">=</span> Thread<span class="token punctuation">(</span>target<span class="token operator">=</span>server<span class="token punctuation">,</span> args<span class="token operator">=</span><span class="token punctuation">(</span><span class="token string">'127.0.0.1'</span><span class="token punctuation">,</span> <span class="token number">8080</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    s<span class="token punctuation">.</span>start<span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre>
+<h2 id="client端-2"><a href="#client端-2" class="headerlink" title="client端"></a>client端</h2><pre class=" language-python"><code class="language-python"><span class="token keyword">import</span> socket
+
+client <span class="token operator">=</span> socket<span class="token punctuation">.</span>socket<span class="token punctuation">(</span><span class="token punctuation">)</span>
+client<span class="token punctuation">.</span>connect<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token string">'127.0.0.1'</span><span class="token punctuation">,</span> <span class="token number">8080</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">while</span> <span class="token boolean">True</span><span class="token punctuation">:</span>
+    client<span class="token punctuation">.</span>send<span class="token punctuation">(</span>b<span class="token string">'hello'</span><span class="token punctuation">)</span>
+    data <span class="token operator">=</span> client<span class="token punctuation">.</span>recv<span class="token punctuation">(</span><span class="token number">1024</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span>
+</code></pre>
+
                 
             </div>
             <hr/>
@@ -420,7 +560,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://hellosaltfish.github.io/2021/080822378.html">https://hellosaltfish.github.io/2021/080822378.html</a>
+                    <a href="https://hellosaltfish.github.io/2021/050962281.html">https://hellosaltfish.github.io/2021/050962281.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -458,8 +598,16 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/Personal/">
-                                    <span class="chip bg-color">Personal</span>
+                                <a href="/tags/%E9%AB%98%E9%98%B6%E9%83%A8%E5%88%86/">
+                                    <span class="chip bg-color">高阶部分</span>
+                                </a>
+                            
+                                <a href="/tags/%E7%BD%91%E7%BB%9C/">
+                                    <span class="chip bg-color">网络</span>
+                                </a>
+                            
+                                <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">
+                                    <span class="chip bg-color">操作系统</span>
                                 </a>
                             
                         </div>
@@ -635,13 +783,13 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2021/080946132.html">
+                <a href="/2021/053110342.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="单例模式">
+                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="后端开发技术面面经（持续更新中...）">
                         
-                        <span class="card-title">单例模式</span>
+                        <span class="card-title">后端开发技术面面经（持续更新中...）</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -652,8 +800,57 @@
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-08-09
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-05-31
                         </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%BC%80%E5%8F%91%E9%9D%A2%E8%AF%95/" class="post-category">
+                                    开发面试
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E9%9D%A2%E7%BB%8F/">
+                        <span class="chip bg-color">面经</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2021/040138966.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="装饰器">
+                        
+                        <span class="card-title">装饰器</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-04-01
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -675,55 +872,6 @@
                     
                     <a href="/tags/%E8%AF%AD%E6%B3%95/">
                         <span class="chip bg-color">语法</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2021/06035534.html">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="《MySQL是怎样运行的》阅读笔记">
-                        
-                        <span class="card-title">《MySQL是怎样运行的》阅读笔记</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-06-03
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" class="post-category">
-                                    数据库
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/MySQL/">
-                        <span class="chip bg-color">MySQL</span>
                     </a>
                     
                 </div>
