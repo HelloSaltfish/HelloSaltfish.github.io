@@ -6,7 +6,7 @@
   <link href="https://hellosaltfish.github.io/atom.xml" rel="self"/>
   
   <link href="https://hellosaltfish.github.io/"/>
-  <updated>2021-09-24T14:19:39.750Z</updated>
+  <updated>2021-09-24T15:06:06.198Z</updated>
   <id>https://hellosaltfish.github.io/</id>
   
   <author>
@@ -21,8 +21,15 @@
     <link href="https://hellosaltfish.github.io/2021/092417393.html"/>
     <id>https://hellosaltfish.github.io/2021/092417393.html</id>
     <published>2021-09-24T14:16:04.479Z</published>
-    <updated>2021-09-24T14:19:39.750Z</updated>
+    <updated>2021-09-24T15:06:06.198Z</updated>
     
+    <content type="html"><![CDATA[<h1 id="物理层"><a href="#物理层" class="headerlink" title="物理层"></a>物理层</h1><h2 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h2><ul><li>解决在各种传输媒体上传输比特0和1的问题,进而给数据链路层提供透明传输比特流的服务</li></ul><h2 id="物理层协议的主要功能"><a href="#物理层协议的主要功能" class="headerlink" title="物理层协议的主要功能"></a>物理层协议的主要功能</h2><ul><li>机械特性</li><li>电气特性</li><li>功能特性</li><li>过程特性</li></ul><h2 id="传输方式"><a href="#传输方式" class="headerlink" title="传输方式"></a>传输方式</h2><ul><li>串行传输</li><li>并行传输</li><li>同步传输</li><li>异步传输</li><li>单攻通信</li><li>半双工通信</li><li>全双工通信</li></ul><h2 id="常用编码"><a href="#常用编码" class="headerlink" title="常用编码"></a>常用编码</h2><ul><li>不归零编码<ul><li>存在同步问题</li></ul></li><li>归零编码<ul><li>优点是自同步</li><li>缺点是编码效率低</li></ul></li><li>曼彻斯特编码<ul><li>传统以太网使用的就是这个编码</li><li>如:正跳变表示比特0,负跳变表示比特1</li><li>码元中间时刻的跳变既表示时钟,又表示数据</li></ul></li><li>差分曼彻斯特编码<ul><li>跳变仅表示时钟</li><li>码元开始处是否发生变化表示比特0或1</li></ul></li></ul><h2 id="基本调制方法"><a href="#基本调制方法" class="headerlink" title="基本调制方法"></a>基本调制方法</h2><ul><li>调幅</li><li>调频</li><li>调相</li></ul><h2 id="输出信号波形失真因素"><a href="#输出信号波形失真因素" class="headerlink" title="输出信号波形失真因素"></a>输出信号波形失真因素</h2><ul><li>码元传输速率</li><li>信号传输距离</li><li>噪声干扰</li><li>传输媒体质量</li></ul><h2 id="奈氏准则"><a href="#奈氏准则" class="headerlink" title="奈氏准则"></a>奈氏准则</h2><ul><li>在假定的理想条件下,为了避免码间串扰,码元传输速率是有上限的</li><li>理想低通信道额最高码元传输速率:2W Baud =2W 码元/秒</li><li>理想低通信道额最高码元传输速率:W Baud =W 码元/秒   W:信道带宽 Buad:波特</li></ul><h2 id="香农定理"><a href="#香农定理" class="headerlink" title="香农定理"></a>香农定理</h2><ul><li>c=W×log2(1+S/N) (单位:bit/s)</li><li>c:信道的极限信息传输速率(b/s)</li><li>S:信道内所传信号的平均功率</li><li>N:信道内的高斯噪声功率</li><li>S/N:信噪比,使用分贝为度量单位 信噪比(dB)=10×log10(S/N)</li></ul>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;物理层&quot;&gt;&lt;a href=&quot;#物理层&quot; class=&quot;headerlink&quot; title=&quot;物理层&quot;&gt;&lt;/a&gt;物理层&lt;/h1&gt;&lt;h2 id=&quot;作用&quot;&gt;&lt;a href=&quot;#作用&quot; class=&quot;headerlink&quot; title=&quot;作用&quot;&gt;&lt;/a&gt;作用&lt;/h2&gt;&lt;u</summary>
+      
     
     
     
