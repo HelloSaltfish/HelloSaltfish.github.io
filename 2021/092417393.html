@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="单例模式, SaltFish">
+    <meta name="keywords" content="计网笔记, SaltFish">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>单例模式 | SaltFish</title>
+    <title>计网笔记 | SaltFish</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -227,12 +227,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/12.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/10.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">单例模式</h1>
+                    <h1 class="description center-align post-title">计网笔记</h1>
                 </div>
             </div>
         </div>
@@ -348,12 +348,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E9%AB%98%E9%98%B6%E9%83%A8%E5%88%86/">
-                                <span class="chip bg-color">高阶部分</span>
-                            </a>
-                        
-                            <a href="/tags/%E8%AF%AD%E6%B3%95/">
-                                <span class="chip bg-color">语法</span>
+                            <a href="/tags/%E8%AE%A1%E7%BD%91/">
+                                <span class="chip bg-color">计网</span>
                             </a>
                         
                     </div>
@@ -364,8 +360,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/Python/" class="post-category">
-                                Python
+                            <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" class="post-category">
+                                计算机网络
                             </a>
                         
                     </div>
@@ -377,7 +373,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2021-08-09
+                    2021-09-24
                 </div>
                 
 
@@ -398,24 +394,7 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="利用元类"><a href="#利用元类" class="headerlink" title="利用元类"></a>利用元类</h1><pre class=" language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">singe</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">def</span> <span class="token function">__new__</span><span class="token punctuation">(</span>cls<span class="token punctuation">,</span> <span class="token operator">*</span>args<span class="token punctuation">,</span> <span class="token operator">**</span>kwargs<span class="token punctuation">)</span><span class="token punctuation">:</span>
-        <span class="token keyword">if</span> <span class="token operator">not</span> hasattr<span class="token punctuation">(</span>cls<span class="token punctuation">,</span> <span class="token string">'_instance'</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-            cls<span class="token punctuation">.</span>_instance <span class="token operator">=</span> super<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>__new__<span class="token punctuation">(</span>cls<span class="token punctuation">)</span>
-        <span class="token keyword">return</span> cls<span class="token punctuation">.</span>_instance
-
-
-<span class="token keyword">class</span> <span class="token class-name">mycls</span><span class="token punctuation">(</span>singe<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> a<span class="token punctuation">)</span><span class="token punctuation">:</span>
-        self<span class="token punctuation">.</span>a <span class="token operator">=</span> a
-
-
-a <span class="token operator">=</span> mycls<span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span>
-b <span class="token operator">=</span> mycls<span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">)</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>a<span class="token punctuation">.</span>a<span class="token punctuation">,</span>id<span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">)</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>b<span class="token punctuation">.</span>a<span class="token punctuation">,</span>id<span class="token punctuation">(</span>b<span class="token punctuation">)</span><span class="token punctuation">)</span>
-</code></pre>
-
+                
                 
             </div>
             <hr/>
@@ -431,7 +410,7 @@ b <span class="token operator">=</span> mycls<span class="token punctuation">(</
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="/about" rel="external nofollow noreferrer">SaltFish</a>
+                    <a href="/about" rel="external nofollow noreferrer">Saltfish</a>
                 </span>
             </div>
             <div class="reprint__type">
@@ -441,7 +420,7 @@ b <span class="token operator">=</span> mycls<span class="token punctuation">(</
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://hellosaltfish.github.io/2021/080946132.html">https://hellosaltfish.github.io/2021/080946132.html</a>
+                    <a href="https://hellosaltfish.github.io/2021/092417393.html">https://hellosaltfish.github.io/2021/092417393.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -454,7 +433,7 @@ b <span class="token operator">=</span> mycls<span class="token punctuation">(</
                     本博客所有文章除特別声明外，均采用
                     <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
                     许可协议。转载请注明来源
-                    <a href="/about" target="_blank">SaltFish</a>
+                    <a href="/about" target="_blank">Saltfish</a>
                     !
                 </span>
             </div>
@@ -479,12 +458,8 @@ b <span class="token operator">=</span> mycls<span class="token punctuation">(</
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E9%AB%98%E9%98%B6%E9%83%A8%E5%88%86/">
-                                    <span class="chip bg-color">高阶部分</span>
-                                </a>
-                            
-                                <a href="/tags/%E8%AF%AD%E6%B3%95/">
-                                    <span class="chip bg-color">语法</span>
+                                <a href="/tags/%E8%AE%A1%E7%BD%91/">
+                                    <span class="chip bg-color">计网</span>
                                 </a>
                             
                         </div>
@@ -656,9 +631,10 @@ b <span class="token operator">=</span> mycls<span class="token punctuation">(</
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2021/092417393.html">
                     <div class="card-image">
@@ -676,9 +652,9 @@ b <span class="token operator">=</span> mycls<span class="token punctuation">(</
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2021-09-24
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-09-24
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -691,6 +667,7 @@ b <span class="token operator">=</span> mycls<span class="token punctuation">(</
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -709,31 +686,31 @@ b <span class="token operator">=</span> mycls<span class="token punctuation">(</
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2021/080822378.html">
+                <a href="/2021/080946132.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="Personal">
+                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="单例模式">
                         
-                        <span class="card-title">Personal</span>
+                        <span class="card-title">单例模式</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            仅供个人浏览
+                            
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-08-08
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-08-09
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Personal/" class="post-category">
-                                    Personal
+                            <a href="/categories/Python/" class="post-category">
+                                    Python
                                 </a>
                             
                             
@@ -743,8 +720,12 @@ b <span class="token operator">=</span> mycls<span class="token punctuation">(</
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Personal/">
-                        <span class="chip bg-color">Personal</span>
+                    <a href="/tags/%E9%AB%98%E9%98%B6%E9%83%A8%E5%88%86/">
+                        <span class="chip bg-color">高阶部分</span>
+                    </a>
+                    
+                    <a href="/tags/%E8%AF%AD%E6%B3%95/">
+                        <span class="chip bg-color">语法</span>
                     </a>
                     
                 </div>
