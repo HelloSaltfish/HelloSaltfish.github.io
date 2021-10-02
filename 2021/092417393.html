@@ -397,7 +397,7 @@
                 <h1 id="物理层"><a href="#物理层" class="headerlink" title="物理层"></a>物理层</h1><h2 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h2><ul>
 <li>解决在各种传输媒体上传输比特0和1的问题,进而给数据链路层提供透明传输比特流的服务</li>
 </ul>
-<h2 id="物理层协议的主要功能"><a href="#物理层协议的主要功能" class="headerlink" title="物理层协议的主要功能"></a>物理层协议的主要功能</h2><ul>
+<h2 id="物理层协议的主要任务"><a href="#物理层协议的主要任务" class="headerlink" title="物理层协议的主要任务"></a>物理层协议的主要任务</h2><ul>
 <li>机械特性</li>
 <li>电气特性</li>
 <li>功能特性</li>
@@ -458,7 +458,10 @@
 <li>S/N:信噪比,使用分贝为度量单位 信噪比(dB)=10×log10(S/N)</li>
 </ul>
 <hr>
-<h1 id="数据链路层"><a href="#数据链路层" class="headerlink" title="数据链路层"></a>数据链路层</h1><h2 id="封装成帧"><a href="#封装成帧" class="headerlink" title="封装成帧"></a>封装成帧</h2><ul>
+<h1 id="数据链路层"><a href="#数据链路层" class="headerlink" title="数据链路层"></a>数据链路层</h1><h2 id="作用-1"><a href="#作用-1" class="headerlink" title="作用"></a>作用</h2><ul>
+<li>在物理层体提供比特流服务的基础上，建立相邻结点之间的数据链路</li>
+</ul>
+<h2 id="封装成帧"><a href="#封装成帧" class="headerlink" title="封装成帧"></a>封装成帧</h2><ul>
 <li>数据链路层给上层交付的协议数据单元添加帧头和帧尾使之成为帧<ul>
 <li>帧头和帧尾中包含有重要的控制信息</li>
 <li>帧头和帧尾的作用之一就是帧定界</li>
@@ -495,6 +498,43 @@
 <li>发送方只有收到对已发送数据分组的确认时，才会向前移动，若收到未按序的确认分组时，对其进行记录，防止相应数据分组的超时重发，但发送窗口不能向前移动</li>
 </ul>
 </li>
+</ul>
+<h2 id="点对点协议PPP"><a href="#点对点协议PPP" class="headerlink" title="点对点协议PPP"></a>点对点协议PPP</h2><ul>
+<li>在点对点链路传输各种协议数据报提供了一个标准的方法，主要有以下三部分构成：<ul>
+<li>对各种协议数据报额封装方法</li>
+<li>链路控制协议LCP，用于建立、配置以及测试数据链路的连接</li>
+<li>一套网络控制协议NCPs，其中的每一个协议支持不同的网络层协议</li>
+</ul>
+</li>
+<li>PPP帧的透明传输<ul>
+<li>面向字节的异步链路使用字节填充法（插入转义字符）</li>
+<li>面向比特的同步链路使用比特填充法（零比特填充）</li>
+</ul>
+</li>
+</ul>
+<h2 id="MAC地址"><a href="#MAC地址" class="headerlink" title="MAC地址"></a>MAC地址</h2><ul>
+<li><p>由48个比特构成</p>
+</li>
+<li><p>当多个主机连接在同一个广播信道上，要想实现两个主机之间的通信，则每个主机必须有一个唯一的标识，即一个数据链路层地址</p>
+</li>
+<li><p>在每个主机发送的帧中必须携带标识发送主机和接收主机的地址，由于这类地址是用于媒体传入控制MAC，因此称这类地址为MAC地址</p>
+</li>
+</ul>
+<h2 id="IP地址"><a href="#IP地址" class="headerlink" title="IP地址"></a>IP地址</h2><ul>
+<li>IP地址是因特网上的主机和路由器所使用的地址，用于标识网络编号和主机编号</li>
+<li>数据包转发过程中：<ul>
+<li>源IP地址和目的IP地址保持不变</li>
+<li>源MAC地址和目的MAC地址逐个链路发生改变</li>
+</ul>
+</li>
+</ul>
+<h2 id="ARP协议"><a href="#ARP协议" class="headerlink" title="ARP协议"></a>ARP协议</h2><ul>
+<li><img src="C:\Users\saltfish\Desktop\总文件\hexo网站图片\WXVXH[(2[KUEFY8R)FUD{VJ.png"></li>
+</ul>
+<h1 id="网络层"><a href="#网络层" class="headerlink" title="网络层"></a>网络层</h1><p>作用</p>
+<ul>
+<li>主要任务是实现网络互联，进而实现数据包在网络之间的传输</li>
+<li></li>
 </ul>
 
                 
